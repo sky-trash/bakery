@@ -22,22 +22,26 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="{{route('home.index')}}">Главная</a>
+                        <a class="nav-link active text-white" aria-current="page"
+                           href="{{route('home.index')}}">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="{{route('about.index')}}">О нас</a>
+                        <a class="nav-link active text-white" aria-current="page" href="{{route('about.index')}}">О
+                            нас</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="{{route('catalogs.index')}}">Каталог</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="{{route('orders.index')}}">Заказ</a>
+                        <a class="nav-link active text-white" aria-current="page"
+                           href="{{route('orders.index')}}">Заказ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="{{route('contact.index')}}">Контакты</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="{{route('articles.index')}}">Полезные статьи</a>
+                        <a class="nav-link active text-white" aria-current="page" href="{{route('articles.index')}}">Полезные
+                            статьи</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="{{route('reviews.index')}}">Отзывы</a>
@@ -47,7 +51,11 @@
             </div>
         </div>
     </nav>
-    @yield('content')
+    <div  style="background: #e8edd5;">
+        <div class="p-2">
+            @yield('content')
+        </div>
+    </div>
 </div>
 </body>
 </html>
