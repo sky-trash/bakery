@@ -13,7 +13,7 @@
 <div class="container">
     <nav class="navbar navbar-expand-lg text-white" style="background: #313802;">
         <div class="container-fluid ">
-            <a class="navbar-brand text-white" href="{{route('home.index')}}">ЛОГОТИП</a>
+            <a class="navbar-brand text-white fw-bold" href="{{route('home.index')}}">ХЛЕБКА</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +51,7 @@
             </div>
         </div>
     </nav>
-    <div  style="background: #e8edd5;">
+    <div  style="background: #e8edd5; height: auto;">
         <div class="p-2">
             @yield('content')
         </div>
