@@ -1,6 +1,3 @@
-<style>
-
-</style>
 @extends('layout.main')
 @section('content')
     <div class="mt-5 color-green">
@@ -162,11 +159,12 @@
                     </div>
                     <div class="card-body card-index text-white d-flex flex-column">
                         <h5 class="card-title">Общие показатели</h5>
-                        <p class="card-text ">Мы добавили новые виды еды, они хорошо сказались на продаже и повысили наш бюджет</p>
+                        <p class="card-text ">Мы добавили новые виды еды, они хорошо сказались на продаже и повысили наш
+                            бюджет</p>
                     </div>
                 </div>
 
-                 <div class="card background-green d-flex flex-column" style="width: 18rem;">
+                <div class="card background-green d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/index_test.png') }}"
                              class="img-fluid w-100 h-100"
@@ -179,7 +177,7 @@
                     </div>
                 </div>
 
-               <div class="card background-green d-flex flex-column" style="width: 18rem;">
+                <div class="card background-green d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/index-one.jpg') }}"
                              class="img-fluid w-100 h-100"
@@ -192,7 +190,7 @@
                     </div>
                 </div>
 
-                 <div class="card background-green d-flex flex-column" style="width: 18rem;">
+                <div class="card background-green d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/img.png') }}"
                              class="img-fluid w-100 h-100"
@@ -204,30 +202,13 @@
                             видМы добМы добавили новые виды едыМы добавили новые виды едыМы добавили новые видМы добМы
                             добавили новые виды едыМы добавили новые виды едыМы добавили новые видМы добМы добавили
                             новые виды едыМы добавили новые виды едыМы добавили новые видМы добМы добавили новые виды
-                            едыМы добавили новые виды едыМы добавили новые видМы добМы добавили новые виды едыМы
-                            добавили новые виды едыМы добавили новые видМы добМы добавили новые виды едыМы добавили
-                            новые виды едыМы добавили новые видМы добМы добавили новые виды едыМы добавили новые виды
-                            едыМы добавили новые виды едыМы добавили новые виды едыМы добавили новые виды едыМы добавили
-                            новые виды едыМы добавили новые виды едыавили новые виды еды</p>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
 <style>
-    .card {
-        height: 100%;
-    }
-
-    .card-body {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .card-index p {
-        margin-bottom: 0;
-    }
-
 </style>
