@@ -9,7 +9,9 @@
                     Вкус!
                 </h1>
                 <p class="">Самая вкусная выпечка в городе ждет вас!</p>
-                <button type="button" class="btn rounded-pill fs-5 pt-2 pb-2  ps-4 pe-4 mb-3 button-background-green-card">
+                <button
+                    type="button"
+                    class="btn rounded-pill fs-5 pt-2 pb-2  ps-4 pe-4 mb-3 button-background-green">
                     Заказ
                 </button>
             </div>
@@ -158,6 +160,7 @@
                              style="object-fit: cover;" alt="...">
                     </div>
                     <div class="card-body card-index text-white d-flex flex-column">
+                        <p class="card-text mt-1 mb-2">Действует до: 27.02.2006</p>
                         <h5 class="card-title">Общие показатели</h5>
                         <p class="card-text ">Мы добавили новые виды еды, они хорошо сказались на продаже и повысили наш
                             бюджет</p>
@@ -171,6 +174,7 @@
                              style="object-fit: cover;" alt="...">
                     </div>
                     <div class="card-body card-index text-white d-flex flex-column">
+                        <p class="card-text mt-1 mb-2">Действует до: 27.02.2006</p>
                         <h5 class="card-title">Общие показатели</h5>
                         <p class="card-text">Мы добавили новые виды еды, они хорошо сказались на продаже и повысили наш
                             бюджет</p>
@@ -184,6 +188,7 @@
                              style="object-fit: cover;" alt="...">
                     </div>
                     <div class="card-body card-index text-white d-flex flex-column">
+                        <p class="card-text mt-1 mb-2">Действует до: 27.02.2006</p>
                         <h5 class="card-title">Общие показатели</h5>
                         <p class="card-text">Мы добавили новые виды еды, они хорошо сказались на продаже и повысили наш
                             бюджет</p>
@@ -197,6 +202,7 @@
                              style="object-fit: cover;" alt="...">м
                     </div>
                     <div class="card-body card-index text-white d-flex flex-column" style="">
+                        <p class="card-text mt-1 mb-2">Действует до: 27.02.2006</p>
                         <h5 class="card-title">Общие показатели</h5>
                         <p class="card-text">Мы добМы добавили новые виды едыМы добавили новые виды едыМы добавили новые
                             видМы добМы добавили новые виды едыМы добавили новые виды едыМы добавили новые видМы добМы
