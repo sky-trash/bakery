@@ -6,12 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(["resources/sass/app.scss", "resources/js/app.js"])
+    @vite(["resources/css/home/index.css"])
+    @vite(["resources/css/generalStyles.css"])
 
     <title>Document</title>
 </head>
 <body>
 <div class="container">
-    <nav class="navbar navbar-expand-lg text-white" style="background: #313802;">
+    <nav class="navbar navbar-expand-lg text-white background-green">
         <div class="container-fluid ">
             <a class="navbar-brand text-white fw-bold" href="{{route('home.index')}}">ХЛЕБКА</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -51,7 +53,7 @@
             </div>
         </div>
     </nav>
-    <div  style="background: #e8edd5; height: auto;">
+    <div style="background: #e8edd5; height: auto;">
         <div class="p-2">
             @yield('content')
         </div>
@@ -59,3 +61,5 @@
 </div>
 </body>
 </html>
+
+

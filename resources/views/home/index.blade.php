@@ -1,43 +1,10 @@
 <style>
-    .opacity_black {
-        position: relative;
-        display: block;
-        overflow: hidden;
-    }
 
-    .opacity_black::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        z-index: 1;
-    }
-
-    .opacity_black .carousel-caption {
-        position: absolute;
-        z-index: 2;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        width: 100%;
-        pointer-events: none;
-    }
-
-    @media (max-width: 768px) {
-        .text-center-sm {
-            text-align: center;
-        }
-    }
 </style>
 @extends('layout.main')
 @section('content')
-    <div class="mt-5" style="color: #313802;">
-        {{--        <h2  class="fw-bold d-flex justify-content-center" style="color: #313802;">АКТУЛЬНЫЕ ПРЕДЛОЖЕНИЯ</h2>--}}
-
+    <div class="mt-5 color-green">
+        {{--        первый блок--}}
         <div class="d-flex justify-content-around align-items-center flex-wrap"
         >
             <div class="text-center-sm">
@@ -45,8 +12,8 @@
                     Вкус!
                 </h1>
                 <p class="">Самая вкусная выпечка в городе ждет вас!</p>
-                <button type="button" class="btn rounded-pill fs-5 pt-2 pb-2  ps-4 pe-4 mb-3"
-                        style="background: #d4e09b;">Заказ
+                <button type="button" class="btn rounded-pill fs-5 pt-2 pb-2  ps-4 pe-4 mb-3 button-background-green">
+                    Заказ
                 </button>
             </div>
             <div>
@@ -60,6 +27,8 @@
                      src="{{asset('storage/index-one.jpg')}}" alt="">
             </div>
         </div>
+
+        {{--        второй блок--}}
         <div class="mt-5 ">
             <div class="text-center">
                 <h2 class="fw-bold d-flex justify-content-center "
@@ -71,58 +40,194 @@
                 <p style="max-width: 400px; margin: 0 auto;" class="fs-3 fw-normal"> Появились новые хлебобулочные
                     изделия</p>
             </div>
-            <div id="carouselExampleSlidesOnly" class="carousel slide mt-3" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
+            <div style="height: 350px;">
+                <div id="carouselExampleSlidesOnly" class="carousel slide mt-3" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0"
+                                class="active"
+                                aria-current="true" aria-label="Slide 1">=
+                        </button>
+                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
+
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="opacity_black d-flex align-items-center justify-content-center"
+                            >
+
+                                <div class="d-flex align-items-center justify-content-center"
+                                     style="width: 100%; height: 100%;">
+                                    <img src="{{ asset('storage/index-one.jpeg') }}"
+                                         class="img-fluid"
+                                         alt="...">
+                                </div>
+
+                                <div class="carousel-caption text-center" style="color: #fff;">
+                                    <h5>Сочный сок</h5>
+                                    <p>Новый вид булочки (сосиска)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="opacity_black d-flex align-items-center justify-content-center"
+                            >
+
+                                <div class="d-flex align-items-center justify-content-center"
+                                     style="width: 100%; height: 100%;">
+                                    <img src="{{ asset('storage/index-one.jpg') }}"
+                                         class="img-fluid"
+                                         alt="...">
+                                </div>
+
+                                <div class="carousel-caption text-center" style="color: #fff;">
+                                    <h5>Сочный сок</h5>
+                                    <p>Новый вид булочки (сосиска)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="opacity_black d-flex align-items-center justify-content-center"
+                            >
+
+                                <div class="d-flex align-items-center justify-content-center"
+                                     style="width: 100%; height: 100%;">
+                                    <img src="{{ asset('storage/img.png') }}"
+                                         class="img-fluid"
+                                         alt="...">
+                                </div>
+
+                                <div class="carousel-caption text-center" style="color: #fff;">
+                                    <h5>Сочный сок</h5>
+                                    <p>Новый вид булочки (сосиска)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="opacity_black d-flex align-items-center justify-content-center"
+                                 style="">
+
+                                <div class="d-flex align-items-center justify-content-center"
+                                     style="width: 100%; height: 100%;">
+                                    <img src="{{ asset('storage/index_test_2.png') }}"
+                                         class="img-fluid"
+                                         alt="...">
+                                </div>
+
+                                <div class="carousel-caption text-center" style="color: #fff;">
+                                    <h5>Сочный сок</h5>
+                                    <p>Новый вид булочки (сосиска)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <div class="carousel-inner ">
-                    <div class="carousel-item active">
-                        <div class="opacity_black"
-                             style="max-width: 500px; width: 100%; max-height: 350px; margin: 0 auto;">
-                            <img src="{{asset('storage/index-one.jpg')}}" class="d-block w-100 h-auto" alt="...">
-                            <div class="carousel-caption" style="color: #fff;">
-                                <h5>Булка рил имба</h5>
-                                <p>ССосиска самый раз</p>
-                            </div>
-                        </div>
+            </div>
+        </div>
+
+        {{--        трей блок--}}
+        <div class="mt-5 ">
+            <div class="text-center">
+                <h2 class="fw-bold d-flex justify-content-center "
+                >
+                    НОВОСТИ
+
+
+                </h2>
+                <p style="max-width: 400px; margin: 0 auto;" class="fs-3 fw-normal">
+                    Актуальные новости
+                </p>
+            </div>
+
+            <div class="d-flex align-content-start justify-content-center flex-wrap gap-3 align-items-stretch">
+                <div class="card background-green d-flex flex-column p-1" style="width: 18rem;">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="{{ asset('storage/index_test_2.png') }}"
+                             class="img-fluid w-100 h-100"
+                             style="object-fit: cover;" alt="...">
                     </div>
-                    <div class="carousel-item">
-                        <div class="opacity_black"
-                             style="max-width: 500px; width: 100%; max-height: 350px; margin: 0 auto;">
-                            <img src="{{asset('storage/index-one.jpg')}}" class="d-block w-100 h-auto" alt="...">
-                            <div class="carousel-caption" style="color: #fff;">
-                                <h5>Четкая булочка</h5>
-                                <p>Капитан вкусно (сок имьа)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="opacity_black"
-                             style="max-width: 500px; width: 100%; max-height: 350px; margin: 0 auto;">
-                            <img src="{{asset('storage/index-one.jpg')}}" class="d-block w-100 h-auto" alt="...">
-                            <div class="carousel-caption" style="color: #fff;">
-                                <h5>Сочный сок</h5>
-                                <p>Новый вид булочки (сосиска)</p>
-                            </div>
-                        </div>
+                    <div class="card-body card-index text-white d-flex flex-column">
+                        <h5 class="card-title">Общие показатели</h5>
+                        <p class="card-text ">Мы добавили новые виды еды, они хорошо сказались на продаже и повысили наш бюджет</p>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
-                        data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"
-                        data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+
+                 <div class="card background-green d-flex flex-column" style="width: 18rem;">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="{{ asset('storage/index_test.png') }}"
+                             class="img-fluid w-100 h-100"
+                             style="object-fit: cover;" alt="...">
+                    </div>
+                    <div class="card-body card-index text-white d-flex flex-column">
+                        <h5 class="card-title">Общие показатели</h5>
+                        <p class="card-text">Мы добавили новые виды еды, они хорошо сказались на продаже и повысили наш
+                            бюджет</p>
+                    </div>
+                </div>
+
+               <div class="card background-green d-flex flex-column" style="width: 18rem;">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="{{ asset('storage/index-one.jpg') }}"
+                             class="img-fluid w-100 h-100"
+                             style="object-fit: cover;" alt="...">
+                    </div>
+                    <div class="card-body card-index text-white d-flex flex-column">
+                        <h5 class="card-title">Общие показатели</h5>
+                        <p class="card-text">Мы добавили новые виды еды, они хорошо сказались на продаже и повысили наш
+                            бюджет</p>
+                    </div>
+                </div>
+
+                 <div class="card background-green d-flex flex-column" style="width: 18rem;">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="{{ asset('storage/img.png') }}"
+                             class="img-fluid w-100 h-100"
+                             style="object-fit: cover;" alt="...">м
+                    </div>
+                    <div class="card-body card-index text-white d-flex flex-column" style="">
+                        <h5 class="card-title">Общие показатели</h5>
+                        <p class="card-text">Мы добМы добавили новые виды едыМы добавили новые виды едыМы добавили новые
+                            видМы добМы добавили новые виды едыМы добавили новые виды едыМы добавили новые видМы добМы
+                            добавили новые виды едыМы добавили новые виды едыМы добавили новые видМы добМы добавили
+                            новые виды едыМы добавили новые виды едыМы добавили новые видМы добМы добавили новые виды
+                            едыМы добавили новые виды едыМы добавили новые видМы добМы добавили новые виды едыМы
+                            добавили новые виды едыМы добавили новые видМы добМы добавили новые виды едыМы добавили
+                            новые виды едыМы добавили новые видМы добМы добавили новые виды едыМы добавили новые виды
+                            едыМы добавили новые виды едыМы добавили новые виды едыМы добавили новые виды едыМы добавили
+                            новые виды едыМы добавили новые виды едыавили новые виды еды</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 @endsection
+<style>
+    .card {
+        height: 100%;
+    }
+
+    .card-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-index p {
+        margin-bottom: 0;
+    }
+
+</style>
