@@ -9,7 +9,7 @@
                     Вкус!
                 </h1>
                 <p class="">Самая вкусная выпечка в городе ждет вас!</p>
-                <button type="button" class="btn rounded-pill fs-5 pt-2 pb-2  ps-4 pe-4 mb-3 button-background-green">
+                <button type="button" class="btn rounded-pill fs-5 pt-2 pb-2  ps-4 pe-4 mb-3 button-background-green-card">
                     Заказ
                 </button>
             </div>
@@ -151,7 +151,7 @@
             </div>
 
             <div class="d-flex align-content-start justify-content-center flex-wrap gap-3 align-items-stretch">
-                <div class="card background-green d-flex flex-column p-1" style="width: 18rem;">
+                <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/index_test_2.png') }}"
                              class="img-fluid w-100 h-100"
@@ -164,7 +164,7 @@
                     </div>
                 </div>
 
-                <div class="card background-green d-flex flex-column p-1" style="width: 18rem;">
+                <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/index_test.png') }}"
                              class="img-fluid w-100 h-100"
@@ -177,7 +177,7 @@
                     </div>
                 </div>
 
-                <div class="card background-green d-flex flex-column p-1" style="width: 18rem;">
+                <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/index-one.jpg') }}"
                              class="img-fluid w-100 h-100"
@@ -190,7 +190,7 @@
                     </div>
                 </div>
 
-                <div class="card background-green d-flex flex-column p-1" style="width: 18rem;">
+                <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/img.png') }}"
                              class="img-fluid w-100 h-100"
@@ -202,6 +202,79 @@
                             видМы добМы добавили новые виды едыМы добавили новые виды едыМы добавили новые видМы добМы
                             добавили новые виды едыМы добавили новые виды едыМы добавили новые видМы добМы добавили
                             новые виды едыМы добавили новые виды едыМы добавили новые видМы добМы добавили новые виды
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{--        четвертый блок--}}
+
+        <div class="mt-5 ">
+            <div class="text-center">
+                <h2 class="fw-bold d-flex justify-content-center "
+                >
+                    АКЦИИ
+                </h2>
+                <p style="max-width: 400px; margin: 0 auto;" class="fs-3 fw-normal">
+                    АКЦИИ И СКИДКИ
+                </p>
+            </div>
+
+            <div class="d-flex align-content-start justify-content-center flex-wrap gap-3 align-items-stretch">
+                <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="{{ asset('storage/index_test_2.png') }}"
+                             class="img-fluid w-100 h-100"
+                             style="object-fit: cover;" alt="...">
+                    </div>
+                    <div class="card-body card-index text-white d-flex flex-column">
+                        <p class="card-text mt-1 mb-2">Действует до:
+                            27.02.2006</p>
+                        <h5 class="card-title">Общие показатели</h5>
+                        <p class="card-text ">На все чебуреки скидка 50%</p>
+                    </div>
+                </div>
+
+                <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="{{ asset('storage/index_test.png') }}"
+                             class="img-fluid w-100 h-100"
+                             style="object-fit: cover;" alt="...">
+                    </div>
+                    <div class="card-body card-index text-white d-flex flex-column">
+                        <p class="card-text mt-1 mb-2">Действует до:
+                            27.02.2006</p>
+                        <h5 class="card-title">Купи 5 бутербродов</h5>
+                        <p class="card-text">При покупке пяти бедрбродов, действует акция, пачка сигарет в подарок</p>
+                    </div>
+                </div>
+
+                <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="{{ asset('storage/index-one.jpg') }}"
+                             class="img-fluid w-100 h-100"
+                             style="object-fit: cover;" alt="...">
+                    </div>
+                    <div class="card-body card-index text-white d-flex flex-column">
+                        <p class="card-text mt-1 mb-2">Действует до:
+                            27.02.2006</p>
+                        <h5 class="card-title">До конца недлели</h5>
+                        <p class="card-text">До конца недели действует акция, купи 100 чебурек и один в подарок</p>
+                    </div>
+                </div>
+
+                <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="{{ asset('storage/img.png') }}"
+                             class="img-fluid w-100 h-100"
+                             style="object-fit: cover;" alt="...">м
+                    </div>
+                    <div class="card-body card-index text-white d-flex flex-column" style="">
+                        <p class="card-text mt-1 mb-2">Действует до: 27.02.2006</p>
+                        <h5 class="card-title">Скидка 100р</h5>
+                        <p class="card-text">Скидка на товар {йфуцйцуйца}, и все до завтра
+
                         </p>
                     </div>
                 </div>
