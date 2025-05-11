@@ -60,7 +60,7 @@
                                 <div class="d-flex align-items-center justify-content-center"
                                      style="width: 100%; height: 100%;">
                                     <img src="{{ asset('storage/index-one.jpeg') }}"
-                                         class="img-fluid"
+                                         class="img-fluid "
                                          alt="...">
                                 </div>
 
@@ -154,7 +154,7 @@
                 <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/index_test_2.png') }}"
-                             class="img-fluid w-100 h-100"
+                             class="img-fluid w-100 h-100 rounded-top"
                              style="object-fit: cover;" alt="...">
                     </div>
                     <div class="card-body card-index text-white d-flex flex-column">
@@ -167,7 +167,7 @@
                 <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/index_test.png') }}"
-                             class="img-fluid w-100 h-100"
+                             class="img-fluid w-100 h-100 rounded-top"
                              style="object-fit: cover;" alt="...">
                     </div>
                     <div class="card-body card-index text-white d-flex flex-column">
@@ -180,7 +180,7 @@
                 <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/index-one.jpg') }}"
-                             class="img-fluid w-100 h-100"
+                             class="img-fluid w-100 h-100 rounded-top"
                              style="object-fit: cover;" alt="...">
                     </div>
                     <div class="card-body card-index text-white d-flex flex-column">
@@ -193,7 +193,7 @@
                 <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/img.png') }}"
-                             class="img-fluid w-100 h-100"
+                             class="img-fluid w-100 h-100 rounded-top"
                              style="object-fit: cover;" alt="...">м
                     </div>
                     <div class="card-body card-index text-white d-flex flex-column" style="">
@@ -225,7 +225,7 @@
                 <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/index_test_2.png') }}"
-                             class="img-fluid w-100 h-100"
+                             class="img-fluid w-100 h-100 rounded-top"
                              style="object-fit: cover;" alt="...">
                     </div>
                     <div class="card-body card-index text-white d-flex flex-column">
@@ -239,7 +239,7 @@
                 <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/index_test.png') }}"
-                             class="img-fluid w-100 h-100"
+                             class="img-fluid w-100 h-100 rounded-top"
                              style="object-fit: cover;" alt="...">
                     </div>
                     <div class="card-body card-index text-white d-flex flex-column">
@@ -253,7 +253,7 @@
                 <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/index-one.jpg') }}"
-                             class="img-fluid w-100 h-100"
+                             class="img-fluid w-100 h-100 rounded-top"
                              style="object-fit: cover;" alt="...">
                     </div>
                     <div class="card-body card-index text-white d-flex flex-column">
@@ -267,7 +267,7 @@
                 <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
                     <div style="height: 200px; overflow: hidden;">
                         <img src="{{ asset('storage/img.png') }}"
-                             class="img-fluid w-100 h-100"
+                             class="img-fluid w-100 h-100 rounded-top"
                              style="object-fit: cover;" alt="...">м
                     </div>
                     <div class="card-body card-index text-white d-flex flex-column" style="">
