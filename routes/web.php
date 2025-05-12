@@ -7,7 +7,7 @@ Auth::routes();
 
 Route::group(['namespace' => 'App\Http\Controllers\Home'], function () {
     Route::get('/', IndexController::class)->name('home.index');
-    Route::post('/{home}', StoreController::class)->name('home.store');
+    Route::post('/home', StoreController::class)->name('home.store');
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\About'], function () {
@@ -16,15 +16,15 @@ Route::group(['namespace' => 'App\Http\Controllers\About'], function () {
 
 Route::group(['namespace' => 'App\Http\Controllers\Catalog'], function () {
     Route::get('/catalogs', IndexController::class)->name('catalogs.index');// Вывод всех товаров
-    Route::get('/catalogs/catalog', CreateController::class)->name('catalogs.create'); // Страница добавления товара
+    Route::get('/catalogs/create', CreateController::class)->name('catalogs.create'); // Страница добавления товара
     Route::post('/catalogs', StoreController::class)->name('catalogs.store'); // Само добавление товара
     Route::get('/catalogs/{catalog}', ShowController::class)->name('catalogs.show'); // Вывод оперделенного товара
 });
 
-Route::group(['namespace' => 'App\Http\Controllers\Order'], function () {
-    Route::get('/orders', IndexController::class)->name('orders.index');// Вывод всех заказов
-    Route::get('/orders/order', CreateController::class)->name('orders.create'); // Страница добавления отзывов
-    Route::post('/orders', StoreController::class)->name('orders.store'); // Само добавление отзыва
+Route::group(['namespace' => 'App\Http\Controllers\Basket'], function () {
+    Route::get('/baskets', IndexController::class)->name('basket.index');// Вывод всех заказов
+    Route::get('/baskets/create', CreateController::class)->name('basket.create'); // Страница добавления отзывов
+    Route::post('/baskets', StoreController::class)->name('basket.store'); // Само добавление отзыва
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Contact'], function () {

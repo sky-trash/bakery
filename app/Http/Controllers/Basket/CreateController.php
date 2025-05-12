@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Order;
+namespace App\Http\Controllers\Basket;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class StoreController extends Controller
+class CreateController extends Controller
 {
     public function __invoke()
     {
+
     }
+
 }

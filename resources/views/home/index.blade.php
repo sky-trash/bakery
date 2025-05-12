@@ -9,11 +9,11 @@
                     Вкус!
                 </h1>
                 <p class="">Самая вкусная выпечка в городе ждет вас!</p>
-                <button
-                        type="button"
-                        class="btn rounded-pill fs-5 pt-2 pb-2  ps-4 pe-4 mb-3 button-background-green">
+                <a href="{{ route('catalogs.index')}}"
+                   type="button"
+                   class="btn rounded-pill fs-5 pt-2 pb-2  ps-4 pe-4 mb-3 button-background-green">
                     Заказ
-                </button>
+                </a>
             </div>
             <div>
                 <img style="max-width: 300px;
@@ -41,19 +41,19 @@
             </div>
             <div style="height: 350px;">
                 <div id="carouselExampleSlidesOnly" class="carousel slide mt-3" data-bs-ride="carousel">
-{{--                    <div class="carousel-indicators">--}}
-{{--                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0"--}}
-{{--                                class="active"--}}
-{{--                                aria-current="true" aria-label="Slide 1">--}}
-{{--                        </button>--}}
-{{--                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"--}}
-{{--                                aria-label="Slide 2"></button>--}}
-{{--                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"--}}
-{{--                                aria-label="Slide 3"></button>--}}
-{{--                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3"--}}
-{{--                                aria-label="Slide 4"></button>--}}
+                    {{--                    <div class="carousel-indicators">--}}
+                    {{--                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0"--}}
+                    {{--                                class="active"--}}
+                    {{--                                aria-current="true" aria-label="Slide 1">--}}
+                    {{--                        </button>--}}
+                    {{--                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"--}}
+                    {{--                                aria-label="Slide 2"></button>--}}
+                    {{--                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"--}}
+                    {{--                                aria-label="Slide 3"></button>--}}
+                    {{--                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3"--}}
+                    {{--                                aria-label="Slide 4"></button>--}}
 
-{{--                    </div>--}}
+                    {{--                    </div>--}}
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="opacity_black d-flex align-items-center justify-content-center"
@@ -66,9 +66,12 @@
                                          alt="...">
                                 </div>
 
-                                <div class="carousel-caption text-center" style="color: #fff;">
-                                    <h5>Сочный сок</h5>
-                                    <p>Новый вид булочки (сосиска)</p>
+                                <div class="carousel-caption text-center p-3" style="color: #fff;">
+                                    <h5>Появилась новая булка "Сосика в чебуреке"</h5>
+                                    <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem
+                                        Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В
+                                        то время некий безымянный печатник создал большую коллекцию размеров и форм
+                                        шрифтов, используя Lorem Ipsum для распечатки образцов.</p>
                                 </div>
                             </div>
                         </div>
@@ -83,9 +86,11 @@
                                          alt="...">
                                 </div>
 
-                                <div class="carousel-caption text-center" style="color: #fff;">
-                                    <h5>Сочный сок</h5>
-                                    <p>Новый вид булочки (сосиска)</p>
+                                <div class="carousel-caption text-center p-3" style="color: #fff;">
+                                    <h5>Нашей компании исполнился один день УРААА!!!!!</h5>
+                                    <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+                                        сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или
+                                        менее стандартное заполнение шаблона, а</p>
                                 </div>
                             </div>
                         </div>
@@ -100,9 +105,11 @@
                                          alt="...">
                                 </div>
 
-                                <div class="carousel-caption text-center" style="color: #fff;">
-                                    <h5>Сочный сок</h5>
-                                    <p>Новый вид булочки (сосиска)</p>
+                                <div class="carousel-caption text-center p-3" style="color: #fff;">
+                                    <h5>В мире выяснили что наши перепечи самые вкусные</h5>
+                                    <p>Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда
+                                        приемлемые модификации, например, юмористические вставки или слова, которые даже
+                                        отдалённо не напоминают латынь.</p>
                                 </div>
                             </div>
                         </div>
@@ -117,23 +124,25 @@
                                          alt="...">
                                 </div>
 
-                                <div class="carousel-caption text-center" style="color: #fff;">
-                                    <h5>Сочный сок</h5>
-                                    <p>Новый вид булочки (сосиска)</p>
+                                <div class="carousel-caption text-center p-3" style="color: #fff;">
+                                    <h5>У нас в наличии новая крупа "Сигаретки марно"</h5>
+                                    <p>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но
+                                        это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года
+                                        н.э., то есть более двух тысячелетий назад</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-{{--                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"--}}
-{{--                            data-bs-slide="prev">--}}
-{{--                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
-{{--                        <span class="visually-hidden">Previous</span>--}}
-{{--                    </button>--}}
-{{--                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"--}}
-{{--                            data-bs-slide="next">--}}
-{{--                        <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
-{{--                        <span class="visually-hidden">Next</span>--}}
-{{--                    </button>--}}
+                    {{--                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"--}}
+                    {{--                            data-bs-slide="prev">--}}
+                    {{--                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
+                    {{--                        <span class="visually-hidden">Previous</span>--}}
+                    {{--                    </button>--}}
+                    {{--                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"--}}
+                    {{--                            data-bs-slide="next">--}}
+                    {{--                        <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
+                    {{--                        <span class="visually-hidden">Next</span>--}}
+                    {{--                    </button>--}}
                 </div>
             </div>
         </div>
@@ -186,20 +195,20 @@
 
             <div class="d-flex align-content-start justify-content-center flex-wrap gap-3 align-items-stretch">
                 @foreach($promotion as $item)
-                        <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
-                            <div style="height: 200px; overflow: hidden;">
-                                <img src="{{ asset('storage/promotions/'. $item->image) }}"
-                                     class="img-fluid w-100 h-100 rounded-top"
-                                     style="object-fit: cover;" alt="...">
-                            </div>
-                            <div class="card-body card-index text-white d-flex flex-column">
-                                <p class="card-text mt-1 mb-2">Действует до:
-                                    {{\Carbon\Carbon::parse($item->date)->format('d.m.Y')}}
-                                </p>
-                                <h5 class="card-title">{{$item->title}}</h5>
-                                <p class="card-text ">{{$item->description}}</p>
-                            </div>
+                    <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
+                        <div style="height: 200px; overflow: hidden;">
+                            <img src="{{ asset('storage/promotions/'. $item->image) }}"
+                                 class="img-fluid w-100 h-100 rounded-top"
+                                 style="object-fit: cover;" alt="...">
                         </div>
+                        <div class="card-body card-index text-white d-flex flex-column">
+                            <p class="card-text mt-1 mb-2">Действует до:
+                                {{\Carbon\Carbon::parse($item->date)->format('d.m.Y')}}
+                            </p>
+                            <h5 class="card-title">{{$item->title}}</h5>
+                            <p class="card-text ">{{$item->description}}</p>
+                        </div>
+                    </div>
                 @endforeach
 
             </div>

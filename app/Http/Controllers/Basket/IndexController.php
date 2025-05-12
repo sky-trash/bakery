@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Order;
+namespace App\Http\Controllers\Basket;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CreateController extends Controller
+class IndexController extends Controller
 {
     public function __invoke()
     {
-
+        return view('basket.index');
     }
-
 }
