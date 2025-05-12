@@ -6,7 +6,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты - Название компании</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Иконки Font Awesome -->
@@ -53,7 +52,7 @@
 <body>
     <!-- Основной контент -->
     <div class="container my-5">
-        <h1 class="text-center mb-5 display-4">Наши контакты</h1>
+        <h1 class="text-center mb-5 display-4">Контакты</h1>
 
         <div class="row justify-content-center">
             <!-- Контактная информация - увеличенный блок -->
@@ -68,7 +67,7 @@
                             <li class="mb-4 py-3 px-4 bg-light rounded">
                                 <i class="fas fa-map-marker-alt text-danger me-3 fa-lg"></i>
                                 <strong class="d-block mb-1">Адрес:</strong>
-                                <span class="fs-3">г. Ижевск, ул. Пушкинская, 248</span>
+                                <span class="fs-3">г. Ижевск, ул. Пушкинская, 268Ж</span>
                             </li>
                             <li class="mb-4 py-3 px-4 bg-light rounded">
                                 <i class="fas fa-phone text-success me-3 fa-lg"></i>
@@ -83,15 +82,15 @@
                             <li class="mb-4 py-3 px-4 bg-light rounded">
                                 <i class="fas fa-clock text-warning me-3 fa-lg"></i>
                                 <strong class="d-block mb-1">Часы работы:</strong>
-                                <span class="fs-3">Пн-Пт: 8:00 - 19:00<br>Сб: 9:00 - 15:00</span>
+                                <span class="fs-3">Пн-Пт: 10:00 - 20:00<br>Сб: 11:00 - 18:00</span>
                             </li>
                         </ul>
                         <div class="social-icons text-center mt-5">
                             <h3 class="mb-4">Мы в социальных сетях</h3>
-                            <a href="#" class="text-decoration-none mx-3"><i class="fab fa-vk fa-3x text-primary"></i></a>
-                            <a href="#" class="text-decoration-none mx-3"><i class="fab fa-telegram fa-3x text-info"></i></a>
-                            <a href="#" class="text-decoration-none mx-3"><i class="fab fa-whatsapp fa-3x text-success"></i></a>
-                            <a href="#" class="text-decoration-none mx-3"><i class="fab fa-youtube fa-3x text-danger"></i></a>
+                            <a href="https://vk.com/feed" class="text-decoration-none mx-3"><i class="fab fa-vk fa-3x text-primary"></i></a>
+                            <a href="https://web.telegram.org" class="text-decoration-none mx-3"><i class="fab fa-telegram fa-3x text-info"></i></a>
+                            <a href="https://www.whatsapp.com" class="text-decoration-none mx-3"><i class="fab fa-whatsapp fa-3x text-success"></i></a>
+                            <a href="https://www.youtube.com" class="text-decoration-none mx-3"><i class="fab fa-youtube fa-3x text-danger"></i></a>
                         </div>
                     </div>
                 </div>
