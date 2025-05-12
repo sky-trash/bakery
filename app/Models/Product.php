@@ -9,6 +9,16 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $table = 'promotions';
+    protected $table = 'products';
     protected $guarded = [];
+
+    public function baskets()
+    {
+        return $this->hasMany(Basket::class, 'product_id', 'id');
+    }
+
+    public function order_product()
+    {
+        return $this->hasMany(Order_product::class, 'product_id', 'id');
+    }
 }

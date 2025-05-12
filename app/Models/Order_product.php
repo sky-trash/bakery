@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Basket extends Model
+class Order_product extends Model
 {
     use HasFactory;
 
-    protected $table = 'baskets';
+    protected $table = 'order_products';
     protected $guarded = [];
 
-    public function user()
+    public function order()
     {
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo(Order::class, 'order_id', 'id');
     }
 
     public function product()
