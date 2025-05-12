@@ -7,7 +7,7 @@ Auth::routes();
 
 Route::group(['namespace' => 'App\Http\Controllers\Home'], function () {
     Route::get('/', IndexController::class)->name('home.index');
-    Route::post('/{home}', StoreController::class)->name('home.store'); // Само добавление отзыва
+    Route::post('/{home}', StoreController::class)->name('home.store');
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\About'], function () {

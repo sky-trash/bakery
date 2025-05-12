@@ -11,7 +11,7 @@
 
     <title>Document</title>
 </head>
-<body>
+<body >
 <div class="container">
     <nav class="navbar navbar-expand-lg text-white background-green">
         <div class="container-fluid ">
@@ -86,8 +86,8 @@
             </div>
         </div>
     </nav>
-    <div style="background: #e8edd5; height: auto;">
-        <div class="p-2">
+    <div style="background: #e8edd5; height: auto;" class=" pb-5">
+        <div class="p-2" >
             @yield('content')
         </div>
     </div>

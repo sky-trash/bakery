@@ -11,6 +11,7 @@ use App\Models\Product;
 use App\Models\Promotion;
 use App\Models\Review;
 use App\Models\User;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -21,8 +22,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        News::factory(20)->create();
-        Promotion::factory(20)->create();
+        News::factory(6)->create();
+        Promotion::factory(6)->create();
         Contact::factory(1)->create();
         User::factory(5)->create();
         Product::factory(100)->create();
@@ -32,9 +33,9 @@ class DatabaseSeeder extends Seeder
         Order_product::factory(50)->create();
 
 
-//        User::factory()->create([
-//            'name' => 'Test User',
-//            'email' => 'test@example.com',
+//        Promotion::factory()->create([
+
+
 //        ]);
     }
 }
