@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layouts.main')
 @section('content')
     <div class="mt-5 color-green">
         {{--        первый блок--}}

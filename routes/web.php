@@ -1,12 +1,10 @@
 <?php
 
+use App\Http\Controllers\ReviewsController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ReviewsController;
+Auth::routes();
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 Route::group(['namespace' => 'App\Http\Controllers\Home'], function () {
     Route::get('/', IndexController::class)->name('home.index');
     Route::post('/{home}', StoreController::class)->name('home.store'); // Само добавление отзыва
@@ -43,3 +41,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Reviews'], function () {
     Route::post('/reviews', StoreController::class)->name('reviews.store'); // Само добавление отзыва
 });
 
+Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'admin'], function () {
+    Route::get('/admin', IndexController::class)->name('admin.index'); // Вывод всех отзывов
+});
+
+Route::group(['namespace' => 'App\Http\Controllers\Cabinet', 'middleware' => 'user'], function () {
+    Route::get('/cabinet', IndexController::class)->name('cabinet.index');
+});

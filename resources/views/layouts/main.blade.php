@@ -49,6 +49,39 @@
                         <a class="nav-link active text-white" aria-current="page" href="{{route('reviews.index')}}">Отзывы</a>
                     </li>
 
+
+                    @can('view-admin', auth()->user())
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="{{route('admin.index')}}">админ
+                                панель</a>
+                        </li>
+                    @endcan
+
+                    @auth()
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page"
+                               href="{{route('cabinet.index')}}">кабинет</a>
+                        </li>
+
+                        <li class="nav-item">
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="p-0 m-0">
+                                @csrf
+
+                                <button class=" nav-link active text-white">Выход</button>
+                            </form>
+                        </li>
+                    @endauth
+
+                    @guest()
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="{{route('login')}}">Вход</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="{{route('register')}}">регистрация</a>
+                        </li>
+                    @endguest
+
                 </ul>
             </div>
         </div>
