@@ -11,7 +11,9 @@
             </div>
 
             <div class="mt-5 mb-5">
-                <button type="button" class="btn btn-secondary ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button" class=" border-0 btn btn-success background-green text-white ms-2"
+                        data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
                     Фильтры
                 </button>
 
@@ -61,6 +63,8 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить
                                     </button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Сбросить
+                                    </button>
                                     <button type="submit" class="btn btn-primary">Сохранить</button>
                                 </div>
                             </form>
@@ -70,20 +74,34 @@
 
             </div>
             <div class="d-flex align-content-start justify-content-center flex-wrap gap-3 align-items-stretch">
-                <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
-                    <div style="height: 200px; overflow: hidden;">
-                        <img src="{{ asset('storage/news/test-1.jpeg') }}"
-                             class="img-fluid w-100 h-100 rounded-top"
-                             style="object-fit: cover;" alt="...">
+
+                @foreach($catalogs as $item)
+                    <div class="card background-green-card d-flex flex-column p-1"
+                         style="width: 18rem;">
+                        <div style="height: 200px; overflow: hidden;">
+                            <img src="{{ asset('storage/news/' . $item->image) }}"
+                                 class="img-fluid w-100 h-100 rounded-top"
+                                 style="object-fit: cover;" alt="...">
+                        </div>
+                        <div class="card-body card-index text-white d-flex flex-column">
+                            {{--                        <p class="card-text mt-1 mb-2">--}}
+                            {{--                            Добавлена: 123123--}}
+                            {{--                        </p>--}}
+                            <h5 class="card-title">{{$item->title}}</h5>
+                            <p class="card-text ">{{$item->description}}</p>
+                        </div>
+                        <div
+                            class="d-flex text-white
+                            align-items-center grid flex-wrap gap-3
+                            justify-content-evenly pt-3 pb-3 border-top ">
+                            <h5 class="card-title ">{{$item->price}}₽ </h5>
+                            <button type="button"
+                                    class="btn btn-success text-black button-background-green w-50 border-0">В корзину
+                            </button>
+                        </div>
                     </div>
-                    <div class="card-body card-index text-white d-flex flex-column">
-                        <p class="card-text mt-1 mb-2">
-                            Добавлена: 123123
-                        </p>
-                        <h5 class="card-title">123</h5>
-                        <p class="card-text ">{1123</p>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </div>

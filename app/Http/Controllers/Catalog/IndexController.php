@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Catalog;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function __invoke()
     {
-        return view('catalogs.index');
+        $catalogs = Product::all();
+        return view('catalogs.index', compact('catalogs'));
     }
 }

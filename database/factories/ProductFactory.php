@@ -16,10 +16,23 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
+        $images = [
+            'test-1.jpeg',
+            'test-2.jpeg',
+            'test-3.jpeg',
+            'test-4.jpeg',
+            'test-5.jpeg',
+            'test-6.jpeg',
+            'test-7.jpeg',
+            'test-8.jpeg',
+            'test-9.jpeg',
+            'test-10.jpeg',
+        ];
+
         return [
             'title' => $this->faker->sentence(5),
             'description' => $this->faker->text,
-            'image' => $this->faker->imageUrl(),
+            'image' => $this->faker->randomElement($images),
             'price' => random_int(100, 10000),
         ];
     }

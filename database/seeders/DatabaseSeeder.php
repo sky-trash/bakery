@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         Promotion::factory(6)->create();
         Contact::factory(1)->create();
         User::factory(5)->create();
-        Product::factory(100)->create();
+        Product::factory(6)->create();
         Review::factory(20)->create();
         Basket::factory(50)->create();
         Order::factory(50)->create();
