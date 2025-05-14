@@ -76,6 +76,8 @@
                             {{--                        <p class="card-text mt-1 mb-2">--}}
                             {{--                            Добавлена: 123123--}}
                             {{--                        </p>--}}
+                            <p class="card-text ">Тип: {{$item->type}}</p>
+
                             <h5 class="card-title">{{$item->title}}</h5>
                             <p class="card-text ">{{$item->description}}</p>
                         </div>
