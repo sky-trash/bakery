@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Article;
 use App\Models\Basket;
 use App\Models\Contact;
 use App\Models\News;
@@ -23,6 +24,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         News::factory(6)->create();
+        Article::factory(6)->create();
         Promotion::factory(6)->create();
         Contact::factory(1)->create();
         User::factory(5)->create();

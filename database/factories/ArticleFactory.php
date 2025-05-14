@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class ProductFactory extends Factory
+class ArticleFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -28,13 +28,19 @@ class ProductFactory extends Factory
             'test-9.jpeg',
             'test-10.jpeg',
         ];
-
+        $time = [
+            '5 минут',
+            '10 минут',
+            '1 час',
+            '25 минут',
+            '40 минут',
+        ];
         return [
             'title' => $this->faker->sentence(5),
+            'time' => $this->faker->randomElement($time),
+            'type' => $this->faker->sentence(1),
             'description' => $this->faker->text,
             'image' => $this->faker->randomElement($images),
-            'price' => random_int(100, 10000),
-            'type' => $this->faker->sentence(1),
         ];
     }
 }
