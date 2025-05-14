@@ -2,6 +2,7 @@
 @section('content')
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,20 +15,24 @@
             transition: transform 0.3s, box-shadow 0.3s;
             height: 100%;
         }
+
         .article-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
+
         .category-badge {
             position: absolute;
             top: 10px;
             right: 10px;
         }
+
         .bread-bg {
             background-color: #f8f1e7;
         }
+
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1608190003443-86a72638d7c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1608190003443-86a72638d7c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -36,6 +41,7 @@
         }
     </style>
 </head>
+
 <body class="bread-bg">
 
     <!-- Основной контент -->
@@ -56,10 +62,11 @@
         <!-- Статьи -->
         <div class="row g-4">
             <!-- Статья 1 -->
+            @foreach($news as $item)
             <div class="col-md-6 col-lg-4">
                 <div class="card article-card">
                     <span class="badge bg-success category-badge">Хранение</span>
-                    <img src="" class="card-img-top" alt="Хлеб в упаковке">
+                    <img src="{{ asset('storage/news/'. $item->image) }}" class="card-img-top" alt="Хлеб в упаковке">
                     <div class="card-body">
                         <h5 class="card-title">Как правильно хранить хлеб</h5>
                         <p class="card-text">Полное руководство по хранению хлеба, чтобы он оставался свежим как можно дольше. Советы по выбору упаковки и места хранения.</p>
@@ -70,8 +77,9 @@
                     </div>
                 </div>
             </div>
+            @endforeach
 
-            <!-- Статья 2 -->
+            <!-- Статья 2
             <div class="col-md-6 col-lg-4">
                 <div class="card article-card">
                     <span class="badge bg-warning text-dark category-badge">Разогрев</span>
@@ -87,7 +95,7 @@
                 </div>
             </div>
 
-            <!-- Статья 3 -->
+            Статья 3
             <div class="col-md-6 col-lg-4">
                 <div class="card article-card">
                     <span class="badge bg-info category-badge">Заморозка</span>
@@ -103,7 +111,7 @@
                 </div>
             </div>
 
-            <!-- Статья 4 -->
+            Статья 4
             <div class="col-md-6 col-lg-4">
                 <div class="card article-card">
                     <span class="badge bg-secondary category-badge">Советы</span>
@@ -119,7 +127,7 @@
                 </div>
             </div>
 
-            <!-- Статья 5 -->
+            Статья 5
             <div class="col-md-6 col-lg-4">
                 <div class="card article-card">
                     <span class="badge bg-success category-badge">Хранение</span>
@@ -135,7 +143,7 @@
                 </div>
             </div>
 
-            <!-- Статья 6 -->
+            Статья 6
             <div class="col-md-6 col-lg-4">
                 <div class="card article-card">
                     <span class="badge bg-warning text-dark category-badge">Разогрев</span>
@@ -149,7 +157,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <!-- Пагинация -->
@@ -171,5 +179,6 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
 @endsection
