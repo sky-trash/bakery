@@ -33,6 +33,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Contact'], function () {
 
 Route::group(['namespace' => 'App\Http\Controllers\Articles'], function () {
     Route::get('/articles', IndexController::class)->name('articles.index');
+    Route::get('/articles/{article}', ShowController::class)->name('articles.show');
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Reviews'], function () {
