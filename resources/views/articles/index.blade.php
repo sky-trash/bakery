@@ -65,13 +65,13 @@
             @foreach($news as $item)
             <div class="col-md-6 col-lg-4">
                 <div class="card article-card">
-                    <span class="badge bg-success category-badge">Хранение</span>
+                    <span class="badge bg-success category-badge">{{ &item->type }}</span>
                     <img src="{{ asset('storage/news/'. $item->image) }}" class="card-img-top" alt="Хлеб в упаковке">
                     <div class="card-body">
-                        <h5 class="card-title">Как правильно хранить хлеб</h5>
-                        <p class="card-text">Полное руководство по хранению хлеба, чтобы он оставался свежим как можно дольше. Советы по выбору упаковки и места хранения.</p>
+                        <h5 class="card-title">{{ &item->title }}</h5>
+                        <p class="card-text">{{ &item->description }}</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-muted"><i class="far fa-clock me-1"></i>5 мин чтения</small>
+                            <small class="text-muted"><i class="far fa-clock me-1"></i>{{ &item->time }}</small>
                             <a href="#" class="btn btn-sm btn-outline-primary">Читать</a>
                         </div>
                     </div>

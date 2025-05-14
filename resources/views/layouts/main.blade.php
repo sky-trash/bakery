@@ -36,7 +36,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page"
-                           href="{{route('basket.index')}}">Заказ</a>
+                           href="{{route('basket.index')}}">Корзина</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="{{route('contact.index')}}">Контакты</a>
