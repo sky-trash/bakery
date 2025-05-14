@@ -22,8 +22,8 @@ class FilterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'price' => 'integer',
-            'type' => 'string',
+            'price' => 'nullable|string',
+            'type' => 'nullable|string',
         ];
     }
 }

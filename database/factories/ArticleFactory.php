@@ -35,10 +35,16 @@ class ArticleFactory extends Factory
             '25 минут',
             '40 минут',
         ];
+        $type = [
+            'Хранение',
+            'Разогрев',
+            'Заморозка',
+            'Советы',
+        ];
         return [
             'title' => $this->faker->sentence(5),
             'time' => $this->faker->randomElement($time),
-            'type' => $this->faker->sentence(1),
+            'type' => $this->faker->randomElement($type),
             'description' => $this->faker->text,
             'image' => $this->faker->randomElement($images),
         ];

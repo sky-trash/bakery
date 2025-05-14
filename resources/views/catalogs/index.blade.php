@@ -27,44 +27,33 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                             </div>
-                            <form action="" method="POST">
+                            <form action="{{route('catalogs.index')}}" method="get">
                                 <div class="modal-body">
                                     <div class="mb-3 w-50">
                                         <label for="type" class="form-label">Тип</label>
                                         <select class="form-select" name="type" aria-label="Default select example">
-                                            <option selected>Выберите тип</option>
-                                            <option value="1">Булки</option>
-                                            <option value="2">Сладости</option>
-                                            <option value="3">Мясные</option>
+                                            <option value="" >Выберите тип</option>
+                                            <option value="Булки" @selected(request('type') == 'Булки')>Булки</option>
+                                            <option value="Сладости" @selected(request('type') == 'Сладости')>Сладости</option>
+                                            <option value="Мясные" @selected(request('type') == 'Мясные')>Мясные</option>
                                         </select>
                                     </div>
                                     <div class="mb-3 w-50">
                                         <label for="price" class="form-label">Цена</label>
                                         <select class="form-select" name="price" aria-label="Default select example">
-                                            <option selected>Выберите цену от</option>
-                                            <option value="1">0 - 100</option>
-                                            <option value="2">101 - 1 000</option>
-                                            <option value="3">1 001 - 10 001</option>
-                                            <option value="4">10 001 - 100 001</option>
+                                            <option value="">Выберите цену от</option>
+                                            <option value="0-100" @selected(request('price') == '0-100')>0 - 100</option>
+                                            <option value="100-1000" @selected(request('price') == '100-1000')>100 - 1 000</option>
+                                            <option value="1000-10000" @selected(request('price') == '1000-10000')>1 000 - 10 000</option>
+                                            <option value="10000-100000" @selected(request('price') == '10000-100000')>10 000 - 100 000</option>
                                         </select>
                                     </div>
-                                    <div class="mb-3 w-50">
-                                        <label for="freshness" class="form-label">Свежесть</label>
-                                        <select class="form-select" name="freshness"
-                                                aria-label="Default select example">
-                                            <option selected>Выберите свежесть</option>
-                                            <option value="1">Новая</option>
-                                            <option value="2">Средняя</option>
-                                            <option value="3">Старая</option>
-                                        </select>
-                                    </div>
-
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить
                                     </button>
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Сбросить
-                                    </button>
+                                    <a href="{{route('catalogs.index')}}" class="btn btn-secondary" >Сбросить
+                                    </a>
                                     <button type="submit" class="btn btn-primary">Сохранить</button>
                                 </div>
                             </form>

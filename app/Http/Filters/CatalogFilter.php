@@ -11,11 +11,24 @@ class CatalogFilter extends AbstractFilter
 
     protected function getCallbacks(): array
     {
-        // TODO: Implement getCallbacks() method.
+        return [
+            self::PRICE => [$this, 'price'],
+            self::TYPE => [$this, 'type'],
+        ];
     }
 
     public function price(Builder $builder, $value)
     {
-        $builder->where('price');
+        if (str_contains($value, '-')) {
+            [$min, $max] = explode('-', $value);
+            $builder->whereBetween('price', [(int)$min, (int)$max]);
+        } else {
+            $builder->where('price', (int)$value);
+        }
+    }
+
+    public function type(Builder $builder, $value)
+    {
+        $builder->where('type', $value);
     }
 }

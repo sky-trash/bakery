@@ -28,13 +28,19 @@ class ProductFactory extends Factory
             'test-9.jpeg',
             'test-10.jpeg',
         ];
+        $type = [
+            'Булка',
+            'Сладости',
+            'Мясные',
+            'Креки',
+        ];
 
         return [
             'title' => $this->faker->sentence(5),
             'description' => $this->faker->text,
             'image' => $this->faker->randomElement($images),
             'price' => random_int(100, 10000),
-            'type' => $this->faker->sentence(1),
+            'type' => $this->faker->randomElement($type),
         ];
     }
 }
