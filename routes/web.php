@@ -16,14 +16,12 @@ Route::group(['namespace' => 'App\Http\Controllers\About'], function () {
 
 Route::group(['namespace' => 'App\Http\Controllers\Catalog'], function () {
     Route::get('/catalogs', IndexController::class)->name('catalogs.index');// Вывод всех товаров
-    Route::get('/catalogs/create', CreateController::class)->name('catalogs.create'); // Страница добавления товара
     Route::post('/catalogs', StoreController::class)->name('catalogs.store'); // Само добавление товара
     Route::get('/catalogs/{catalog}', ShowController::class)->name('catalogs.show'); // Вывод оперделенного товара
 });
 
-Route::group(['namespace' => 'App\Http\Controllers\Basket'], function () {
+Route::group(['namespace' => 'App\Http\Controllers\Basket','middleware' => 'user'], function () {
     Route::get('/baskets', IndexController::class)->name('basket.index');// Вывод всех заказов
-    Route::get('/baskets/create', CreateController::class)->name('basket.create'); // Страница добавления отзывов
     Route::post('/baskets', StoreController::class)->name('basket.store'); // Само добавление отзыва
 });
 

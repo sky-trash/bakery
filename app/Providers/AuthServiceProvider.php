@@ -29,6 +29,6 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Gate::define('view-admin', [AdminPolicy::class, 'view']);
-        Gate::define('view-cabinet', [UserPolicy::class, 'view']);
+        Gate::define('view-user', [UserPolicy::class, 'view']);
     }
 }

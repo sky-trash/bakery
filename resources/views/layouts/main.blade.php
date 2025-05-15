@@ -34,10 +34,12 @@
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="{{route('catalogs.index')}}">Каталог</a>
                     </li>
+                    @auth()
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page"
                            href="{{route('basket.index')}}">Корзина</a>
                     </li>
+                    @endauth
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="{{route('contact.index')}}">Контакты</a>
                     </li>
