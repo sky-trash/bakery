@@ -16,7 +16,7 @@ class IndexController extends Controller
 
         $filter = app()->make(ArticlesFilter::class, ['queryParams' => array_filter($data)]);
 
-        $articles = Article::filter($filter)->get();
+        $articles = Article::filter($filter)->paginate(9);
 
         return view('articles.index', compact('articles'));
     }

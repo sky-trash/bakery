@@ -11,8 +11,8 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $news = News::orderBy('date', 'desc')->get();
-        $promotion = Promotion::orderBy('date', 'desc')->get();
+        $news = News::orderBy('date', 'desc')->paginate(4, ['*'], 'news_page');
+        $promotion = Promotion::orderBy('date', 'desc')->paginate(4, ['*'], 'promotion_page');
         return view('home.index', compact('news', 'promotion'));
     }
 }

@@ -29,7 +29,7 @@ class ProductFactory extends Factory
             'test-10.jpeg',
         ];
         $type = [
-            'Булка',
+            'Булки',
             'Сладости',
             'Мясные',
             'Креки',

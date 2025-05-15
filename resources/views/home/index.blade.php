@@ -161,6 +161,7 @@
                 </p>
             </div>
 
+
             <div class="d-flex align-content-start justify-content-center flex-wrap gap-3 align-items-stretch">
                 @foreach($news as $item)
                     <div class="card background-green-card d-flex flex-column p-1" style="width: 18rem;">
@@ -178,6 +179,9 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+            <div class="d-grid justify-content-center mt-3 mb-3">
+                {{$news->withQueryString()->links()}}
             </div>
         </div>
 
@@ -211,6 +215,9 @@
                     </div>
                 @endforeach
 
+            </div>
+            <div class="d-grid justify-content-center mt-3 mb-3">
+                {{$promotion->withQueryString()->links()}}
             </div>
         </div>
     </div>

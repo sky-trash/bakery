@@ -15,7 +15,7 @@ class IndexController extends Controller
         $data = $request->validated();
 
         $filter = app()->make(CatalogFilter::class, ['queryParams' => array_filter($data)]);
-        $catalogs = Product::filter($filter)->get();
+        $catalogs = Product::filter($filter)->paginate(8);
 
         return view('catalogs.index', compact('catalogs'));
     }

@@ -32,27 +32,36 @@
                                     <div class="mb-3 w-50">
                                         <label for="type" class="form-label">Тип</label>
                                         <select class="form-select" name="type" aria-label="Default select example">
-                                            <option value="" >Выберите тип</option>
+                                            <option value="">Выберите тип</option>
                                             <option value="Булки" @selected(request('type') == 'Булки')>Булки</option>
-                                            <option value="Сладости" @selected(request('type') == 'Сладости')>Сладости</option>
-                                            <option value="Мясные" @selected(request('type') == 'Мясные')>Мясные</option>
+                                            <option value="Сладости" @selected(request('type') == 'Сладости')>Сладости
+                                            </option>
+                                            <option value="Мясные" @selected(request('type') == 'Мясные')>Мясные
+                                            </option>
                                         </select>
                                     </div>
                                     <div class="mb-3 w-50">
                                         <label for="price" class="form-label">Цена</label>
                                         <select class="form-select" name="price" aria-label="Default select example">
                                             <option value="">Выберите цену от</option>
-                                            <option value="0-100" @selected(request('price') == '0-100')>0 - 100</option>
-                                            <option value="100-1000" @selected(request('price') == '100-1000')>100 - 1 000</option>
-                                            <option value="1000-10000" @selected(request('price') == '1000-10000')>1 000 - 10 000</option>
-                                            <option value="10000-100000" @selected(request('price') == '10000-100000')>10 000 - 100 000</option>
+                                            <option value="0-100" @selected(request('price') == '0-100')>0 - 100
+                                            </option>
+                                            <option value="100-1000" @selected(request('price') == '100-1000')>100 - 1
+                                                000
+                                            </option>
+                                            <option value="1000-10000" @selected(request('price') == '1000-10000')>1 000
+                                                - 10 000
+                                            </option>
+                                            <option value="10000-100000" @selected(request('price') == '10000-100000')>
+                                                10 000 - 100 000
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить
                                     </button>
-                                    <a href="{{route('catalogs.index')}}" class="btn btn-secondary" >Сбросить
+                                    <a href="{{route('catalogs.index')}}" class="btn btn-secondary">Сбросить
                                     </a>
                                     <button type="submit" class="btn btn-primary">Сохранить</button>
                                 </div>
@@ -61,6 +70,9 @@
                     </div>
                 </div>
 
+            </div>
+            <div class="d-grid justify-content-end mt-3 mb-3">
+                {{$catalogs->withQueryString()->links()}}
             </div>
             <div class="d-flex align-content-start justify-content-center flex-wrap gap-3 align-items-stretch">
 
@@ -94,6 +106,11 @@
                 @endforeach
 
             </div>
+
+            <div class="d-grid justify-content-end mt-3 mb-3">
+                {{$catalogs->withQueryString()->links()}}
+            </div>
+
         </div>
     </div>
 @endsection
