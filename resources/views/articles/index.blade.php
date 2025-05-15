@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -66,52 +66,53 @@
 
 <body class="bread-bg">
 
-    <!-- Основной контент -->
-    <div class="container mb-5">
-        <!-- Категории -->
-        <div class="row mb-4">
-            <div class="col-12">
-                <div class="d-flex flex-wrap gap-2">
-                    <a href="?category=all"
-                        class="btn {{ empty(request('category')) || request('category') == 'all' ? 'btn-success' : 'btn-outline-success' }}">
-                        Все статьи
-                    </a>
-                    <a href="?category=Хранение"
-                        class="btn {{ request('category') == 'Хранение' ? 'btn-success' : 'btn-outline-success' }}">
-                        Хранение
-                    </a>
-                    <a href="?category=Разогрев"
-                        class="btn {{ request('category') == 'Разогрев' ? 'btn-success' : 'btn-outline-success' }}">
-                        Разогрев
-                    </a>
-                    <a href="?category=Заморозка"
-                        class="btn {{ request('category') == 'Заморозка' ? 'btn-success' : 'btn-outline-success' }}">
-                        Заморозка
-                    </a>
-                    <a href="?category=Советы"
-                        class="btn {{ request('category') == 'Советы' ? 'btn-success' : 'btn-outline-success' }}">
-                        Советы
-                    </a>
-                </div>
+<!-- Основной контент -->
+<div class="container mb-5">
+    <!-- Категории -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex flex-wrap gap-2">
+                <a href="{{route('articles.index')}}"
+                   class="btn {{ empty(request('type')) || request('type') == 'all' ? 'btn-success' : 'btn-outline-success' }}">
+                    Все статьи
+                </a>
+                <a href="{{route('articles.index', ['type' => 'Хранение'])}}"
+                   class="btn {{ request('type') == 'Хранение' ? 'btn-success' : 'btn-outline-success' }}">
+                    Хранение
+                </a>
+                <a href="{{route('articles.index', ['type' => 'Разогрев'])}}"
+                   class="btn {{ request('type') == 'Разогрев' ? 'btn-success' : 'btn-outline-success' }}">
+                    Разогрев
+                </a>
+                <a href="{{route('articles.index', ['type' => 'Заморозка'])}}"
+                   class="btn {{ request('type') == 'Заморозка' ? 'btn-success' : 'btn-outline-success' }}">
+                    Заморозка
+                </a>
+                <a href="{{route('articles.index', ['type' => 'Советы'])}}"
+                   class="btn {{ request('type') == 'Советы' ? 'btn-success' : 'btn-outline-success' }}">
+                    Советы
+                </a>
             </div>
         </div>
+    </div>
 
-        <!-- Статья -->
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            @foreach($articles as $item)
+    <!-- Статья -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach($articles as $item)
             <div class="col">
-                <div class="card h-100 border-0 shadow-sm bg-success bg-opacity-10 position-relative"> <!-- Добавлено position-relative -->
+                <div class="card h-100 border-0 shadow-sm bg-success bg-opacity-10 position-relative">
+                    <!-- Добавлено position-relative -->
                     <!-- Бейдж, который вылезает поверх карточки -->
                     <span class="badge bg-success position-absolute"
-                        style="top: 10px; right: 15px; z-index: 1; padding: 5px 10px; font-size: 0.75rem;">
+                          style="top: 10px; right: 15px; z-index: 1; padding: 5px 10px; font-size: 0.75rem;">
                         {{ $item->type }}
                     </span>
 
                     <div class="ratio ratio-16x9">
                         <img src="{{ asset('storage/news/'.$item->image) }}"
-                            class="card-img-top object-fit-cover"
-                            alt="{{ $item->title }}"
-                            style="border-top-left-radius: .5rem; border-top-right-radius: .5rem;">
+                             class="card-img-top object-fit-cover"
+                             alt="{{ $item->title }}"
+                             style="border-top-left-radius: .5rem; border-top-right-radius: .5rem;">
                     </div>
 
                     <div class="card-body d-flex flex-column">
@@ -123,14 +124,14 @@
                                 <i class="far fa-clock me-1"></i>{{ $item->time }}
                             </small>
                             <a href="{{ route('articles.show', $item->id) }}"
-                                class="btn btn-success btn-sm px-3 py-1">
+                               class="btn btn-success btn-sm px-3 py-1">
                                 Читать <i class="fas fa-arrow-right ms-1"></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            @endforeach
+        @endforeach
         </div>
     </div>
     </div>
