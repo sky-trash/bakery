@@ -23,17 +23,21 @@
                                         <p class="card-text">{{$item->product->description}}</p>
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <button type="button"
+                                        <form action="{{route('basket.update', $item->product->id )}}" method="post" class="d-flex align-items-center gap-3">
+                                            @csrf
+                                            @method('put')
+                                            <input type="hidden" name="basket_id" value="{{ $item->id }}">
+                                            <input type="hidden" name="quantity" value="{{ $item->quantity }}">
+                                            <button type="submit" name="action" value="plus"
                                                     class="btn btn-success text-black button-background-green border-0">
                                                 +
                                             </button>
                                             <div>{{$item->quantity}}</div>
-                                            <button type="button"
+                                            <button type="submit" name="action" value="minus"
                                                     class="btn btn-success text-black button-background-green border-0">
                                                 -
                                             </button>
-                                        </div>
+                                        </form>
                                         <div>{{$item->product->price}} P за штуку</div>
                                     </div>
                                 </div>
@@ -52,10 +56,13 @@
 
                         <h6 class="card-title">Товары</h6>
                         @foreach($basket as $item)
+                            <hr class="hr-dashed">
                             <div class="d-flex justify-content-between mt-1">
                                 <p class="card-text m-0">{{$item->product->title}}</p>
                                 <p class="card-text m-0">{{$item->quantity}} шт</p>
                             </div>
+
+
                         @endforeach
                         <hr class="hr mt-2 mb-2"/>
                         <div class="d-flex justify-content-between">
@@ -63,12 +70,32 @@
                             <p class="card-text m-0">{{$price}} р</p>
                         </div>
                         <hr class="hr mt-2 mb-2"/>
-                        <button type="button" class="btn btn-success text-black button-background-green border-0 w-100">
-                            Купить
-                        </button>
+                        <form action="{{route('basket.store')}}" method="post">
+                            @csrf
+                            <input type="hidden" value="{{$userId}}" name="user_id">
+                            <input type="hidden" value="{{$price}} " name="total_price">
+                            @foreach($basket as $item)
+                                <input type="hidden" value="{{ $item->product->id }}" name="product_id[]">
+                                <input type="hidden" value="{{ $item->quantity }}" name="quantitys[]">
+                            @endforeach
+                            <button type="submit"
+                                    class="btn btn-success text-black button-background-green border-0 w-100"
+                                    @if($basket->isEmpty()) disabled @endif>
+                                Купить
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+<style>
+    .hr-dashed {
+        margin: 5px 0;
+        padding: 0;
+        height: 0;
+        border: none;
+        border-top: 2px dashed #cacaca;
+    }
+</style>

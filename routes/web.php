@@ -23,6 +23,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Catalog'], function () {
 Route::group(['namespace' => 'App\Http\Controllers\Basket','middleware' => 'user'], function () {
     Route::get('/baskets', IndexController::class)->name('basket.index');// Вывод всех заказов
     Route::post('/baskets', StoreController::class)->name('basket.store'); // Само добавление отзыва
+    Route::put('/baskets/{basket}', UpdateController::class)->name('basket.update'); // Само добавление отзыва
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Contact'], function () {

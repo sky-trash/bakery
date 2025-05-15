@@ -19,8 +19,8 @@ class IndexController extends Controller
         $price = $basket->sum(function ($item) {
             return $item->product->price * $item->quantity;
         });
+$userId = $user->id;
 
-
-        return view('basket.index', compact('basket', 'price'));
+        return view('basket.index', compact('basket', 'price', 'userId'));
     }
 }
