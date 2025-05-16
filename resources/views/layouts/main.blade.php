@@ -55,7 +55,7 @@
 
                     @can('view-admin', auth()->user())
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="{{route('admin.index')}}">админ
+                            <a class="nav-link active text-white" aria-current="page" href="{{route('admin.index')}}">Админ
                                 панель</a>
                         </li>
                     @endcan
@@ -63,7 +63,7 @@
                     @auth()
                         <li class="nav-item">
                             <a class="nav-link active text-white" aria-current="page"
-                               href="{{route('cabinet.index')}}">кабинет</a>
+                               href="{{route('cabinet.index')}}">Кабинет</a>
                         </li>
 
                         <li class="nav-item">
@@ -81,7 +81,7 @@
                             <a class="nav-link active text-white" aria-current="page" href="{{route('login')}}">Вход</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="{{route('register')}}">регистрация</a>
+                            <a class="nav-link active text-white" aria-current="page" href="{{route('register')}}">Регистрация</a>
                         </li>
                     @endguest
 
