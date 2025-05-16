@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Basket;
+namespace App\Http\Requests\Catalog;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRequest extends FormRequest
+class CreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,7 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'action' => 'required|in:plus,minus',
-            'quantity' => 'required|integer',
+            'product_id' => '',
         ];
     }
-
-
 }

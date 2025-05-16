@@ -1,27 +1,29 @@
 <?php
 
-namespace App\Http\Controllers\Catalog;
+namespace App\Http\Controllers\Basket;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Catalog\CreateRequest;
+use App\Http\Requests\Basket\StoreRequest;
+use App\Http\Requests\Basket\UpdateRequest;
 use App\Models\Basket;
+use App\Models\Order;
+use App\Models\Order_product;
 use App\Models\Product;
 use Exception;
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\DB;
 
-class StoreController extends Controller
+class DestroyController extends Controller
 {
-
-    public function __invoke(CreateRequest $request)
+    public function __invoke(Basket $basket)
     {
+        $this->authorize('view-user', auth()->user());
         try {
-            $data = $request->validated();
-            $data['user_id'] = auth()->id();
-            Basket::create($data);
-
+            $basket->delete();
             return redirect()
                 ->route('basket.index')
-                ->with('success', 'Товар успешно добавлен в корзину!');
+                ->with('success', 'Товар успешно удален из корзины!');
+
         } catch (Exception $e) {
             return redirect()
                 ->route('basket.index')
@@ -31,7 +33,5 @@ class StoreController extends Controller
                     'telegram_text' => 'Telegram - @user_Kirillka'
                 ]);
         }
-
     }
-
 }

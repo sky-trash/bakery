@@ -1,6 +1,24 @@
 @extends('layouts.main')
 @section('content')
+    <div class="container">
+        @if(session('success'))
+            <div class="alert alert-success alert-dismissible fade show ms-5 me-2" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+            @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show ms-5 me-2" role="alert">
+                    {{ session('error') }}
+                    <a href="{{session('telegram_link')}}">{{session('telegram_text')}}</a>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+    </div>
+
     <div class="mt-5 container">
+
         <div class="text-center">
             <h2 class="fw-bold d-flex justify-content-center mb-3">КОРЗИНА</h2>
         </div>
@@ -18,15 +36,21 @@
                                          alt="...">
                                 </div>
                                 <div class="col-8 ps-3">
+                                    <form action="{{route('basket.destroy',$item->id) }}" method="post" class="m-0 p-0">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn-close  close-button"
+                                                aria-label="Close"></button>
+                                    </form>
                                     <div class="card-body ps-0">
                                         <h5 class="card-title">{{$item->product->title}}</h5>
                                         <p class="card-text">{{$item->product->description}}</p>
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between">
-                                        <form action="{{route('basket.update', $item->product->id )}}" method="post" class="d-flex align-items-center gap-3">
+                                        <form action="{{route('basket.update', $item->id )}}" method="post"
+                                              class="d-flex align-items-center gap-3">
                                             @csrf
                                             @method('put')
-                                            <input type="hidden" name="basket_id" value="{{ $item->id }}">
                                             <input type="hidden" name="quantity" value="{{ $item->quantity }}">
                                             <button type="submit" name="action" value="plus"
                                                     class="btn btn-success text-black button-background-green border-0">
@@ -41,6 +65,7 @@
                                         <div>{{$item->product->price}} P за штуку</div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     @endforeach
@@ -61,7 +86,6 @@
                                 <p class="card-text m-0">{{$item->product->title}}</p>
                                 <p class="card-text m-0">{{$item->quantity}} шт</p>
                             </div>
-
 
                         @endforeach
                         <hr class="hr mt-2 mb-2"/>
@@ -90,12 +114,4 @@
         </div>
     </div>
 @endsection
-<style>
-    .hr-dashed {
-        margin: 5px 0;
-        padding: 0;
-        height: 0;
-        border: none;
-        border-top: 2px dashed #cacaca;
-    }
-</style>
+

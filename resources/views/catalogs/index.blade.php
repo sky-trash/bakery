@@ -1,6 +1,17 @@
 @extends('layouts.main')
 @section('content')
+    <div>
+        @if(session('error'))
+            <div class="alert alert-danger alert-dismissible fade show ms-5 me-2" role="alert">
+                {{ session('error') }}
+                <a href="{{session('telegram_link')}}">{{session('telegram_text')}}</a>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+    </div>
     <div class="mt-5 mb-10 color-green">
+
+
         <div class="mt-5 ">
             <div class="text-center">
                 <h2 class="fw-bold d-flex justify-content-center mb-3"
@@ -85,23 +96,23 @@
                                  style="object-fit: cover;" alt="...">
                         </div>
                         <div class="card-body card-index text-white d-flex flex-column">
-                            {{--                        <p class="card-text mt-1 mb-2">--}}
-                            {{--                            Добавлена: 123123--}}
-                            {{--                        </p>--}}
                             <p class="card-text ">Тип: {{$item->type}}</p>
 
                             <h5 class="card-title">{{$item->title}}</h5>
                             <p class="card-text ">{{$item->description}}</p>
                         </div>
-                        <div
-                            class="d-flex text-white
+                        <form action="{{route('catalogs.store')}}" method="post"
+                              class="d-flex text-white
                             align-items-center grid flex-wrap gap-3
                             justify-content-evenly pt-3 pb-3 border-top ">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{$item->id}}">
                             <h5 class="card-title ">{{$item->price}}₽ </h5>
-                            <button type="button"
-                                    class="btn btn-success text-black button-background-green w-50 border-0">В корзину
+                            <button type="submit"
+                                    class="btn btn-success text-black button-background-green w-50 border-0">В
+                                корзину
                             </button>
-                        </div>
+                        </form>
                     </div>
                 @endforeach
 

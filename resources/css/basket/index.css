@@ -1,0 +1,33 @@
+.close-button {
+    position: absolute;
+
+    top: 5px;
+    right: 5px;
+}
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 300px;
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.hr-dashed {
+    margin: 5px 0;
+    padding: 0;
+    height: 0;
+    border: none;
+    border-top: 2px dashed #cacaca;
+}
