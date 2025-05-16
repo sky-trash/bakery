@@ -72,7 +72,7 @@
                             <li class="mb-4 py-3 px-4 bg-light rounded">
                                 <i class="fas fa-phone text-success me-3 fa-lg"></i>
                                 <strong class="d-block mb-1">Телефон:</strong>
-                                <span class="fs-3">{{$contact->adres}}</span>
+                                <span class="fs-3">{{$contact->phone}}</span>
                             </li>
                             <li class="mb-4 py-3 px-4 bg-light rounded">
                                 <i class="fas fa-envelope text-info me-3 fa-lg"></i>
