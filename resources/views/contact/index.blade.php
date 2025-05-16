@@ -67,17 +67,17 @@
                             <li class="mb-4 py-3 px-4 bg-light rounded">
                                 <i class="fas fa-map-marker-alt text-danger me-3 fa-lg"></i>
                                 <strong class="d-block mb-1">Адрес:</strong>
-                                <span class="fs-3">г. Ижевск, ул. Пушкинская, 268Ж</span>
+                                <span class="fs-3">{{$contact->adres}}</span>
                             </li>
                             <li class="mb-4 py-3 px-4 bg-light rounded">
                                 <i class="fas fa-phone text-success me-3 fa-lg"></i>
                                 <strong class="d-block mb-1">Телефон:</strong>
-                                <span class="fs-3">+7 (3412) 123-45-67</span>
+                                <span class="fs-3">{{$contact->adres}}</span>
                             </li>
                             <li class="mb-4 py-3 px-4 bg-light rounded">
                                 <i class="fas fa-envelope text-info me-3 fa-lg"></i>
                                 <strong class="d-block mb-1">Email:</strong>
-                                <span class="fs-3">office@izhevsk.ru</span>
+                                <span class="fs-3">{{$contact->email}}</span>
                             </li>
                             <li class="mb-4 py-3 px-4 bg-light rounded">
                                 <i class="fas fa-clock text-warning me-3 fa-lg"></i>

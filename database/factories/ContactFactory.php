@@ -17,8 +17,9 @@ class ContactFactory extends Factory
     public function definition(): array
     {
         return [
-            'phone' => $this->faker->e164PhoneNumber(),
-            'email' => $this->faker->email(),
+            'phone' => '+7 (3412) 123-45-67',
+            'email' => 'office@izhevsk.ru',
+            'adres' => 'г. Ижевск, ул. Пушкинская, 268Ж'
         ];
     }
 }
