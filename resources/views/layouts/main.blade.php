@@ -55,7 +55,7 @@
 
                     @can('view-admin', auth()->user())
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="{{route('admin.index')}}">Админ
+                            <a class="nav-link active text-white" aria-current="page" href="{{route('admin.user.index')}}">Админ
                                 панель</a>
                         </li>
                     @endcan

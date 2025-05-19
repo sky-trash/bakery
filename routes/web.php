@@ -20,7 +20,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Catalog'], function () {
     Route::get('/catalogs/{product}', ShowController::class)->name('catalogs.show'); // Вывод оперделенного товара
 });
 
-Route::group(['namespace' => 'App\Http\Controllers\Basket','middleware' => 'user'], function () {
+Route::group(['namespace' => 'App\Http\Controllers\Basket', 'middleware' => 'user'], function () {
     Route::get('/baskets', IndexController::class)->name('basket.index');// Вывод всех заказов
     Route::post('/baskets', StoreController::class)->name('basket.store'); // Само добавление отзыва
     Route::put('/baskets/{basket}', UpdateController::class)->name('basket.update'); // Само добавление отзыва
@@ -42,10 +42,13 @@ Route::group(['namespace' => 'App\Http\Controllers\Reviews'], function () {
     Route::post('/reviews', StoreController::class)->name('reviews.store'); // Само добавление отзыва
 });
 
-Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'admin'], function () {
-    Route::get('/admin', IndexController::class)->name('admin.index'); // Вывод всех отзывов
-});
-
 Route::group(['namespace' => 'App\Http\Controllers\Cabinet', 'middleware' => 'user'], function () {
     Route::get('/cabinet', IndexController::class)->name('cabinet.index');
+});
+
+Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'admin'], function () {
+    Route::group(['namespace' => 'user'], function () {
+        Route::get('/admin', IndexController::class)->name('admin.user.index'); // Вывод всех отзывов
+    });
+
 });
