@@ -17,7 +17,7 @@ Route::group(['namespace' => 'App\Http\Controllers\About'], function () {
 Route::group(['namespace' => 'App\Http\Controllers\Catalog'], function () {
     Route::get('/catalogs', IndexController::class)->name('catalogs.index');// Вывод всех товаров
     Route::post('/catalogs', StoreController::class)->name('catalogs.store'); // Само добавление товара
-    Route::get('/catalogs/{catalog}', ShowController::class)->name('catalogs.show'); // Вывод оперделенного товара
+    Route::get('/catalogs/{product}', ShowController::class)->name('catalogs.show'); // Вывод оперделенного товара
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Basket','middleware' => 'user'], function () {

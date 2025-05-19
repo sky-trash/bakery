@@ -88,8 +88,10 @@
             <div class="d-flex align-content-start justify-content-center flex-wrap gap-3 align-items-stretch">
 
                 @foreach($catalogs as $item)
-                    <div class="card background-green-card d-flex flex-column p-1"
-                         style="width: 18rem;">
+                    <a
+                        href="{{route('catalogs.show', $item->id)}}"
+                        class="card background-green-card d-flex flex-column p-1s"
+                        style="text-decoration: none; width: 18rem;">
                         <div style="height: 200px; overflow: hidden;">
                             <img src="{{ asset('storage/news/' . $item->image) }}"
                                  class="img-fluid w-100 h-100 rounded-top"
@@ -108,12 +110,12 @@
                             @csrf
                             <input type="hidden" name="product_id" value="{{$item->id}}">
                             <h5 class="card-title ">{{$item->price}}₽ </h5>
-                            <button type="submit"
-                                    class="btn btn-success text-black button-background-green w-50 border-0">В
+                            <button type="submit" @if(!$user) disabled @endif
+                            class="btn btn-success text-black button-background-green w-50 border-0">В
                                 корзину
                             </button>
                         </form>
-                    </div>
+                    </a>
                 @endforeach
 
             </div>
