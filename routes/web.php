@@ -36,10 +36,11 @@ Route::group(['namespace' => 'App\Http\Controllers\Articles'], function () {
     Route::get('/articles/{article}', ShowController::class)->name('articles.show');
 });
 
-Route::group(['namespace' => 'App\Http\Controllers\Reviews'], function () {
-    Route::get('/reviews', IndexController::class)->name('reviews.index'); // Вывод всех отзывов
-    Route::get('/reviews/create', CreateController::class)->name('reviews.create'); // Страница добавления отзывов
-    Route::post('/reviews', StoreController::class)->name('reviews.store'); // Само добавление отзыва
+Route::get('/reviews', 'App\Http\Controllers\Reviews\IndexController@__invoke')->name('reviews.index');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/reviews/create', 'App\Http\Controllers\Reviews\CreateController@__invoke')->name('reviews.create');
+    Route::post('/reviews', 'App\Http\Controllers\Reviews\StoreController@__invoke')->name('reviews.store');
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'admin'], function () {

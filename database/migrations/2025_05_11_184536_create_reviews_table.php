@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->index('user_id', 'review_user_idx');
             $table->foreign('user_id', 'review_user_fk')->on('users')->references('id')->onDelete('cascade');
+            $table->tinyInteger('rating')->unsigned()->default(5); // Рейтинг от 1 до 5
             $table->string('title');
             $table->text('description');
             $table->timestamp('date');
