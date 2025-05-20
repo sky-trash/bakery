@@ -42,7 +42,7 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        $user->update(['online' => true]); // или 1, если это integer
+        $user->update(['online' => true]);
     }
 
     public function logout(Request $request)
