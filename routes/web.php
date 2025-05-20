@@ -50,3 +50,19 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'admi
 Route::group(['namespace' => 'App\Http\Controllers\Cabinet', 'middleware' => 'user'], function () {
     Route::get('/cabinet', IndexController::class)->name('cabinet.index');
 });
+
+
+
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
+
+Route::get('/test/{email}', function ($email, Request $request) {
+    $text = $request->query('text', 'Привет! Это тестовое письмо по умолчанию.');
+
+    Mail::raw($text, function ($message) use ($email) {
+        $message->to($email)
+                ->subject('Тестовая отправка');
+    });
+
+    return "Письмо отправлено на $email с текстом: $text";
+});
