@@ -7,6 +7,7 @@ use App\Http\Requests\Basket\StoreRequest;
 use App\Models\Basket;
 use App\Models\Order;
 use App\Models\Order_product;
+use App\Models\Sales_statistics;
 use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
@@ -31,6 +32,10 @@ class StoreController extends Controller
                         'quantity' => $request->input('quantitys')[$key]
                     ]);
                 }
+                Sales_statistics::create([
+                    'user_id' => $data['user_id'],
+                    'order_id' => $order->id,
+                ]);
 
                 Basket::where('user_id', $data['user_id'])->delete();
             });
