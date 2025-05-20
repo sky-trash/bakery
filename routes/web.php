@@ -48,7 +48,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Cabinet', 'middleware' => 'us
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'admin'], function () {
     Route::group(['namespace' => 'user'], function () {
-        Route::get('/admin', IndexController::class)->name('admin.user.index'); // Вывод всех отзывов
+        Route::get('/admin/', IndexController::class)->name('admin.user.index'); // Вывод всех отзывов
     });
-
+    Route::group(['namespace' => 'statistics'], function () {
+        Route::get('/admin/statistics', IndexController::class)->name('admin.statistics.index'); // Вывод всех отзывов
+    });
 });
