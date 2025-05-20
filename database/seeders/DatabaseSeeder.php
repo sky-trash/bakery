@@ -11,6 +11,7 @@ use App\Models\Order_product;
 use App\Models\Product;
 use App\Models\Promotion;
 use App\Models\Review;
+use App\Models\Subscription;
 use App\Models\User;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -33,6 +34,10 @@ class DatabaseSeeder extends Seeder
         Basket::factory(100)->create();
         Order::factory(50)->create();
         Order_product::factory(50)->create();
+        Subscription::insert([
+            ['id' => 1, 'subscriptions' => 'news', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 2, 'subscriptions' => 'promotions', 'created_at' => now(), 'updated_at' => now()],
+        ]);
 
 
 //        Promotion::factory()->create([

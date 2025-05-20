@@ -66,4 +66,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Order::class, 'sales_statistics', 'user_id', 'order_id');
     }
+
+    public function subscription()
+    {
+        return $this->belongsToMany(User::class,  'subscription_id', 'user_id', 'id');
+    }
 }

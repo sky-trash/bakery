@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sales_statistics extends Model
+class SubscriptionsUser extends Model
 {
+
     use HasFactory;
 
-    protected $table = 'sales_statistics';
+    protected $table = 'subscriptions_users';
     protected $guarded = [];
 
     public function user()
@@ -17,8 +18,8 @@ class Sales_statistics extends Model
         return $this->belongsTo(User::class,  'user_id', 'id');
     }
 
-    public function order()
+    public function subscription()
     {
-        return $this->belongsTo(Order::class, 'order_id', 'id');
+        return $this->belongsTo(Subscription::class, 'subscription_id', 'id');
     }
 }
