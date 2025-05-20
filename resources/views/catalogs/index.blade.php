@@ -93,7 +93,7 @@
                         class="card background-green-card d-flex flex-column p-1s"
                         style="text-decoration: none; width: 18rem;">
                         <div style="height: 200px; overflow: hidden;">
-                            <img src="{{ asset('storage/news/' . $item->image) }}"
+                            <img src="{{ asset('storage/products/' . $item->image) }}"
                                  class="img-fluid w-100 h-100 rounded-top"
                                  style="object-fit: cover;" alt="...">
                         </div>

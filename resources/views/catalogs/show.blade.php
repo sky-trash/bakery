@@ -16,7 +16,7 @@
             <div class="">
 
                 <div class="card mb-3 p-2" style="margin: 0 auto; ">
-                    <img src="{{ asset('storage/news/' . $product->image) }}" class="card-img-top w-25" alt="..."
+                    <img src="{{ asset('storage/products/' . $product->image) }}" class="card-img-top w-25" alt="..."
                          style="margin: 0 auto; min-width: 262px">
                     <div class="card-body" style="max-width: 500px; margin: 0 auto;">
                         <h5 class="card-title">{{$product->title}}</h5>

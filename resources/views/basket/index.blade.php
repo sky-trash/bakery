@@ -31,7 +31,7 @@
                         <div class="card">
                             <div class="row g-0 p-3">
                                 <div class="col-4">
-                                    <img src="{{asset('storage/news/' . $item->product->image)}}"
+                                    <img src="{{asset('storage/products/' . $item->product->image)}}"
                                          class="img-fluid rounded-start"
                                          alt="...">
                                 </div>

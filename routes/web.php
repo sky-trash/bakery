@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ReviewsController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
+
 
 Auth::routes();
 
@@ -54,11 +57,18 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'admi
     Route::group(['namespace' => 'statistics'], function () {
         Route::get('/admin/statistics', IndexController::class)->name('admin.statistics.index'); // Вывод всех отзывов
     });
+    Route::group(['namespace' => 'product'], function () {
+        Route::get('/admin/products', IndexController::class)->name('admin.products.index'); // Вывод всех отзывов
+        Route::get('/admin/products/create', CreateController::class)->name('admin.products.create'); // Вывод всех отзывов
+        Route::post('/admin/products', StoreController::class)->name('admin.products.store'); // Вывод всех отзывов
+        Route::get('/admin/products/{product}/edit', EditController::class)->name('admin.products.edit'); // Вывод всех отзывов
+        Route::patch('/admin/products/{product}', UpdateController::class)->name('admin.products.update'); // Вывод всех отзывов
+        Route::delete('/admin/products/{product}', DestroyController::class)->name('admin.products.destroy'); // Вывод всех отзывов
+    });
 });
 
 
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Http\Request;
+
 
 Route::get('/test/{email}', function ($email, Request $request) {
     $text = $request->query('text', 'Привет! Это тестовое письмо по умолчанию.');
