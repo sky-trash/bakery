@@ -1,31 +1,31 @@
-/.phpunit.cache
+### Laravel Basic ###
 /node_modules
+/vendor
+.env
+.env.*
+!.env.example
 /public/build
 /public/hot
 /storage/*.key
 /storage/pail
-/vendor
-#.env
-.env.backup
-.env.production
-.phpactor.json
+
+### Development ###
+/.phpunit.cache
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/auth.json
+
+### IDE ###
 /.fleet
 /.idea
 /.nova
 /.vscode
 /.zed
-/public/storage/
+.phpactor.json
+/auth.json
 
+### Storage ###
+# Игнорируем ВСЁ в public/storage (симлинк)
 /public/storage/*
-!/public/storage/.gitignore
-/storage/app/*
-!/storage/app/public
-!/storage/app/.gitignore
-/storage/app/public/*
-!/storage/app/public/.gitignore
