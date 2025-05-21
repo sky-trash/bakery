@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Type;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -40,7 +42,7 @@ class ProductFactory extends Factory
             'description' => $this->faker->text,
             'image' => $this->faker->randomElement($images),
             'price' => random_int(100, 10000),
-            'type' => $this->faker->randomElement($type),
+            'type_id' => Type::get()->random()->id,
         ];
     }
 }

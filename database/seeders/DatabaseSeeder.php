@@ -12,6 +12,7 @@ use App\Models\Product;
 use App\Models\Promotion;
 use App\Models\Review;
 use App\Models\Subscription;
+use App\Models\Type;
 use App\Models\User;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -29,6 +30,11 @@ class DatabaseSeeder extends Seeder
         Promotion::factory(50)->create();
         Contact::factory(1)->create();
         User::factory(5)->create();
+        Type::insert([
+            ['id' => 1, 'type' => 'Булки', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 2, 'type' => 'Сладости', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 3, 'type' => 'Мясные', 'created_at' => now(), 'updated_at' => now()],
+        ]);
         Product::factory(50)->create();
         Review::factory(20)->create();
         Basket::factory(100)->create();
@@ -38,6 +44,7 @@ class DatabaseSeeder extends Seeder
             ['id' => 1, 'subscriptions' => 'news', 'created_at' => now(), 'updated_at' => now()],
             ['id' => 2, 'subscriptions' => 'promotions', 'created_at' => now(), 'updated_at' => now()],
         ]);
+
 
 
 //        Promotion::factory()->create([

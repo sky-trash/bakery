@@ -22,4 +22,10 @@ class Product extends Model
     {
         return $this->hasMany(Order_product::class, 'product_id', 'id');
     }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class, 'type_id', 'id');
+    }
+
 }

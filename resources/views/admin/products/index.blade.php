@@ -8,12 +8,13 @@
             </div>
         @endif
 
-    @if(session('error'))
-        <div class="alert alert-danger alert-dismissible fade show ms-5 me-2" role="alert">
-            {{ session('error') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
+            @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show ms-5 me-2" role="alert">
+                    {{ session('error') }}
+                    <a href="{{session('telegram_link')}}">{{session('telegram_text')}}</a>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
 
 
 
@@ -39,7 +40,7 @@
                     <th scope="row">{{$item->title}}</th>
                     <th scope="row">{{$item->description}}</th>
                     <th scope="row">{{$item->price}}</th>
-                    <th scope="row">{{$item->type}}</th>
+                    <th scope="row">{{$item->type->type}}</th>
                     <th scope="row">
                         <a href="{{route('admin.products.edit', $item->id )}}"> <button class="btn btn-success" type="submit">Изменить</button></a>
                         <form action="{{route('admin.products.destroy', $item->id)}}" method="post">

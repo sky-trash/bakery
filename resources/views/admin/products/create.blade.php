@@ -4,10 +4,10 @@
         @if(session('error'))
             <div class="alert alert-danger alert-dismissible fade show ms-5 me-2" role="alert">
                 {{ session('error') }}
+                <a href="{{session('telegram_link')}}">{{session('telegram_text')}}</a>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-
         <h2 class="fw-bold d-flex justify-content-center mb-3">
             ДОБАВЛЕНИЕ ПРОДУКТОВ
         </h2>
@@ -29,7 +29,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Тип</label>
-                    <input type="text" class="form-control" name="type" id="exampleFormControlInput1" placeholder="Тип">
+                    <select class="form-select" name="type_id" aria-label="Default select example">
+                        @foreach($type as $item)
+                <option value="{{$item->id}}">{{$item->type}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Default file input example</label>

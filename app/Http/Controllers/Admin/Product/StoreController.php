@@ -19,7 +19,6 @@ class StoreController extends Controller
         try {
             DB::transaction(function () use ($request) {
                 $data = $request->validated();
-
                 if ($request->hasFile('image')) {
                     $extension = $request->file('image')->getClientOriginalExtension();
                     $uniqueName = Str::uuid() . '.' . $extension;

@@ -16,7 +16,9 @@ return new class extends Migration {
             $table->text('description');
             $table->string('image');
             $table->integer('price');
-            $table->string('type');
+            $table->unsignedBigInteger('type_id');
+            $table->index('type_id', 'products_type_id_idx');
+            $table->foreign('type_id', 'products_type_id_fk')->on('types')->references('id')->onDelete('cascade');
             $table->timestamps();
         });
     }

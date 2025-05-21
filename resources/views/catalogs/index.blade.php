@@ -98,7 +98,7 @@
                                  style="object-fit: cover;" alt="...">
                         </div>
                         <div class="card-body card-index text-white d-flex flex-column">
-                            <p class="card-text ">Тип: {{$item->type}}</p>
+                            <p class="card-text ">Тип: {{$item->type->type}}</p>
 
                             <h5 class="card-title">{{$item->title}}</h5>
                             <p class="card-text ">{{$item->description}}</p>
