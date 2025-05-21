@@ -103,5 +103,8 @@
 
             </tbody>
         </table>
+            <div class="d-grid justify-content-center mt-3 mb-3">
+                {{$orders->withQueryString()->links()}}
+            </div>
     </div>
 @endsection

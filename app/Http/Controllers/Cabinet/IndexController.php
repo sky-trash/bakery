@@ -10,7 +10,7 @@ class IndexController extends Controller
     {
 
         $user = auth()->user();
-        $orders = $user->orders()->with(['order_product.product'])->get();
+        $orders = $user->orders()->with(['order_product.product'])->paginate(5);
         $userId = $user->id;
         return view('cabinet.index', compact('orders', 'userId'));
     }
