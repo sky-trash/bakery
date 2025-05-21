@@ -3,6 +3,23 @@
 @section('content')
     <div class="mt-5">
 
+
+        @if(session('success'))
+            <div class="alert alert-success alert-dismissible fade show ms-5 me-2 mb-5" role="alert">
+                {{ session('success') }} <br>
+                Номер вашего заказа: {{ session('number_order') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-danger alert-dismissible fade show ms-5 me-2 mb-5" role="alert">
+                {{ session('error') }}
+                <a href="{{session('telegram_link')}}">{{session('telegram_text')}}</a>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="text-center">
             <h2 class="fw-bold d-flex justify-content-center mb-3"
             >
@@ -60,14 +77,23 @@
                                                             <strong>Описание:</strong> {{ $orderProduct->product->description }}<br>
                                                             <strong>Цена:</strong> {{ $orderProduct->product->price }}<br>
                                                             <strong>Кол-во:</strong> {{ $orderProduct->quantity }}
+
                                                         </div>
                                                     </li>
                                                 @endforeach
                                             </ul>
                                     </div>
-                                    <div class="modal-footer">
+                                    <form class="modal-footer" action="{{route('cabinet.store')}}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="user_id" value="{{$userId}}">
+                                        <input type="hidden" name="total_price" value="{{$item->total_price}}">
+                                        @foreach($item->order_product as $orderProduct)
+                                            <input type="hidden" value="{{$orderProduct->product->id}}" name="product_id[]">
+                                            <input type="hidden" value="{{ $orderProduct->quantity }}" name="quantitys[]">
+                                        @endforeach
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                                    </div>
+                                        <button type="submit" class="btn btn-secondary">Повторить заказ</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

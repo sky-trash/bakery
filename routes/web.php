@@ -48,6 +48,7 @@ Route::middleware('auth')->group(function () {
 
 Route::group(['namespace' => 'App\Http\Controllers\Cabinet', 'middleware' => 'user'], function () {
     Route::get('/cabinet', IndexController::class)->name('cabinet.index');
+    Route::post('/cabinet', StoreController::class)->name('cabinet.store');
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'admin'], function () {

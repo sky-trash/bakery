@@ -17,7 +17,8 @@ class StoreController extends Controller
     public function __invoke(StoreRequest $request)
     {
         try {
-            DB::transaction(function () use ($request) {
+            $order = null;
+            DB::transaction(function () use ($request, &$order) {
                 $data = $request->validated();
 
                 $data['order_number'] = 'ORD-' . now()->format('YmdHis') . '-' . rand(1000, 9999);
@@ -41,8 +42,11 @@ class StoreController extends Controller
             });
 
             return redirect()
-                ->route('basket.index')
-                ->with('success', 'Покупка успешно оформлена! Спасибо за заказ!');
+                ->route('cabinet.index')
+                ->with([
+                    'success' => 'Покупка успешно оформлена! Спасибо за заказ!',
+                    'number_order' => $order->order_number,
+                ]);
 
         } catch (Exception $e) {
             return redirect()
