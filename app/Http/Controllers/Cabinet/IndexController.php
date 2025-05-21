@@ -8,6 +8,10 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        return view('cabinet.index');
+
+        $user = auth()->user();
+        $orders = $user->orders()->with(['order_product.product'])->get();
+
+        return view('cabinet.index', compact('orders'));
     }
 }
