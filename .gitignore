@@ -22,15 +22,10 @@ yarn-error.log
 /.zed
 /public/storage/
 
-# Игнорируем всё в public/storage, кроме самого .gitignore
 /public/storage/*
 !/public/storage/.gitignore
-
-# Игнорируем всё в storage/app, кроме public и .gitignore
 /storage/app/*
 !/storage/app/public
 !/storage/app/.gitignore
-
-# В storage/app/public игнорируем всё, кроме .gitignore
 /storage/app/public/*
 !/storage/app/public/.gitignore
