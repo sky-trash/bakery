@@ -68,6 +68,12 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'admi
 });
 
 
+use App\Http\Controllers\SubscriptionController;
+
+Route::post('/subscribe', [SubscriptionController::class, 'subscribe'])->middleware('auth')->name('subscribe');
+Route::post('/unsubscribe', [SubscriptionController::class, 'unsubscribe'])->middleware('auth')->name('unsubscribe');
+
+
 
 
 Route::get('/test/{email}', function ($email, Request $request) {
