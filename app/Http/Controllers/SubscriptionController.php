@@ -3,17 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Subscriber;
 use App\Models\Article;
 use App\Models\Promotion;
 use Illuminate\Support\Facades\Mail;
 
+
 class SubscriptionController extends Controller
 {
-    public function subscribe()
+    public function subscribe(Request $request)
     {
-        $user = Auth::user();
+        $user = auth()->user();
 
+        if (!Subscriber::where('email', $user->email)->exists()) {
+            Subscriber::create([
+                'email' => $user->email,
+            ]);
+        }
         $articles = Article::latest()->take(5)->get();
         $promotions = Promotion::latest()->take(5)->get();
 
@@ -25,6 +31,15 @@ class SubscriptionController extends Controller
             $message->subject('Подписка на новости и акции');
         });
 
-        return back()->with('success', 'Письмо отправлено на ваш email!');
+        return back()->with('success', 'Вы успешно подписались.');
+    }
+
+    public function unsubscribe(Request $request)
+    {
+        $user = auth()->user();
+
+        Subscriber::where('email', $user->email)->delete();
+
+        return back()->with('success', 'Вы успешно отписались.');
     }
 }

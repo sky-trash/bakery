@@ -196,9 +196,14 @@
                 </div>
 
                 @auth
-                    <form action="{{ route('subscribe') }}" method="POST" style="position: absolute; right: 0;">
+                    @php
+                        $isSubscribed = \App\Models\Subscriber::where('email', auth()->user()->email)->exists();
+                    @endphp
+                    <form action="{{ $isSubscribed ? route('unsubscribe') : route('subscribe') }}" method="POST" style="position: absolute; right: 0;">
                         @csrf
-                        <button type="submit" class="btn btn-primary">Подписаться на рассылку</button>
+                        <button type="submit" class="btn btn-{{ $isSubscribed ? 'danger' : 'primary' }}">
+                            {{ $isSubscribed ? 'Отписаться от рассылки' : 'Подписаться на рассылку' }}
+                        </button>
                     </form>
                 @endauth
             </div>
