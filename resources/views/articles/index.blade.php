@@ -95,7 +95,13 @@
             </div>
         </div>
     </div>
-    <div class="d-grid justify-content-end mt-3 mb-3">
+    <div class="mt-3 mb-3"style="flex-direction: row;display: flex;justify-content: space-between;">
+        @auth
+            <form action="{{ route('subscribe') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-primary">Подписаться на рассылку</button>
+            </form>
+        @endauth
         {{$articles->withQueryString()->links()}}
     </div>
     <!-- Статья -->

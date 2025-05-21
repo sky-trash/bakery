@@ -52,6 +52,12 @@ Route::group(['namespace' => 'App\Http\Controllers\Cabinet', 'middleware' => 'us
 });
 
 
+use App\Http\Controllers\SubscriptionController;
+
+Route::post('/subscribe', [SubscriptionController::class, 'subscribe'])->middleware('auth')->name('subscribe');
+
+
+
 
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;

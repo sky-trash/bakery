@@ -187,14 +187,20 @@
 
         {{--        четвертый блок--}}
         <div class="mt-5 ">
-            <div class="text-center">
-                <h2 class="fw-bold d-flex justify-content-center "
-                >
-                    АКЦИИ
-                </h2>
-                <p style="max-width: 400px; margin: 0 auto;" class="fs-3 fw-normal">
-                    АКЦИИ И СКИДКИ
-                </p>
+        <div style="display: flex; justify-content: center; align-items: center; position: relative;">
+                <div style="text-align: center;">
+                    <h2 class="fw-bold">АКЦИИ</h2>
+                    <p style="max-width: 400px; margin: 0 auto;" class="fs-3 fw-normal">
+                        АКЦИИ И СКИДКИ
+                    </p>
+                </div>
+
+                @auth
+                    <form action="{{ route('subscribe') }}" method="POST" style="position: absolute; right: 0;">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Подписаться на рассылку</button>
+                    </form>
+                @endauth
             </div>
 
             <div class="d-flex align-content-start justify-content-center flex-wrap gap-3 align-items-stretch">
