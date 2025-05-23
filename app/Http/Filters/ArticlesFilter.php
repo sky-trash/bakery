@@ -18,6 +18,8 @@ class ArticlesFilter extends AbstractFilter
 
     public function type(Builder $builder, $value)
     {
-        $builder->where('type', $value);
+        $builder->whereHas('typeArticles', function ($query) use ($value) {
+            $query->where('type', $value);
+        });
     }
 }

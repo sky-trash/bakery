@@ -22,7 +22,7 @@ class DestroyController extends Controller
 
     } catch (Exception $e) {
 return redirect()
-->route('admin.products.create')
+->route('admin.products.index')
 ->with([
 'error' => 'При удалении произошла ошибка, обратитесь пожалуйста в поддержку.',
 'telegram_link' => 'https://t.me/user_Kirillka',

@@ -23,7 +23,7 @@
         <div class="text-center">
             <h2 class="fw-bold d-flex justify-content-center mb-3"
             >
-ЛИЧНЫЙ КАБИНЕТ
+                ЛИЧНЫЙ КАБИНЕТ
             </h2>
 
             <h4 class="fw-bold d-flex justify-content-center mb-3"
@@ -52,46 +52,62 @@
                     <td>{{$item->total_price}}</td>
                     <td>{{$item->status}}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal{{$item->id}}">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#orderModal{{$item->id}}">
                             Подробности
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="orderModal{{$item->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="orderModalLabel{{$item->id}}" aria-hidden="true">
+                        <div class="modal fade" id="orderModal{{$item->id}}" data-bs-backdrop="static"
+                             data-bs-keyboard="false" tabindex="-1" aria-labelledby="orderModalLabel{{$item->id}}"
+                             aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h1 class="modal-title fs-5" id="orderModalLabel{{$item->id}}">
                                             Заказ № {{$item->order_number}}
                                         </h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Закрыть"></button>
                                     </div>
                                     <div class="modal-body">
                                         <h5>Список продуктов:</h5>
-                                            <ul class="list-group">
-                                                @foreach($item->order_product as $orderProduct)
-                                                    <li class="list-group-item">
+                                        <ul class="list-group d-grid gap-2">
+                                            @foreach($item->order_product as $orderProduct)
+                                                <li class="list-group-item border-top">
 
-                                                        <div>
-                                                            <strong>Название:</strong> {{ $orderProduct->product->title }}<br>
-                                                            <strong>Описание:</strong> {{ $orderProduct->product->description }}<br>
-                                                            <strong>Цена:</strong> {{ $orderProduct->product->price }}<br>
-                                                            <strong>Кол-во:</strong> {{ $orderProduct->quantity }}
-
+                                                    <div>
+                                                        <div class="">
+                                                            <img
+                                                                src="{{asset('storage/products/' . $orderProduct->product->image)}}"
+                                                                class="img-fluid rounded-start w-25"
+                                                                alt="...">
                                                         </div>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
+                                                        <strong>Название:</strong> {{ $orderProduct->product->title }}
+                                                        <br>
+                                                        <strong>Описание:</strong> {{ $orderProduct->product->description }}
+                                                        <br>
+                                                        <strong>Цена:</strong> {{ $orderProduct->product->price }}<br>
+                                                        <strong>Кол-во:</strong> {{ $orderProduct->quantity }}
+
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </ul>
                                     </div>
                                     <form class="modal-footer" action="{{route('cabinet.store')}}" method="post">
                                         @csrf
                                         <input type="hidden" name="user_id" value="{{$userId}}">
                                         <input type="hidden" name="total_price" value="{{$item->total_price}}">
                                         @foreach($item->order_product as $orderProduct)
-                                            <input type="hidden" value="{{$orderProduct->product->id}}" name="product_id[]">
-                                            <input type="hidden" value="{{ $orderProduct->quantity }}" name="quantitys[]">
+                                            <input type="hidden" value="{{$orderProduct->product->id}}"
+                                                   name="product_id[]">
+                                            <input type="hidden" value="{{ $orderProduct->quantity }}"
+                                                   name="quantitys[]">
                                         @endforeach
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            Закрыть
+                                        </button>
                                         <button type="submit" class="btn btn-secondary">Повторить заказ</button>
                                     </form>
                                 </div>
@@ -103,8 +119,8 @@
 
             </tbody>
         </table>
-            <div class="d-grid justify-content-center mt-3 mb-3">
-                {{$orders->withQueryString()->links()}}
-            </div>
+        <div class="d-grid justify-content-center mt-3 mb-3">
+            {{$orders->withQueryString()->links()}}
+        </div>
     </div>
 @endsection

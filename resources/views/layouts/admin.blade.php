@@ -72,29 +72,6 @@
                     data-accordion="false">
                     <li class="nav-header">ПАНЕЛЬ</li>
 
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
-                            <p>
-                                ПОЛЬЗОВАТЕЛИ
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="pages/mailbox/mailbox.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Вывод пользователей</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/mailbox/compose.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Добавление пользователя</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
 
                     <li class="nav-item">
                         <a href="#" class="nav-link">
@@ -106,15 +83,9 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                <a href="{{route('admin.contacts.index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Вывод контактов</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/mailbox/compose.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Добавление контактов</p>
                                 </a>
                             </li>
                         </ul>
@@ -130,15 +101,9 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                <a href="{{route('admin.reviews.index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Вывод отзывов</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/mailbox/compose.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Добавление отзывов</p>
                                 </a>
                             </li>
                         </ul>
@@ -238,19 +203,19 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>
-                                ПОЛУЗНЫЕ СТАТЬИ
+                                ПОЛЕЗНЫЕ СТАТЬИ
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                <a href="{{route('admin.articles.index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Вывод статей</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/mailbox/compose.html" class="nav-link">
+                                <a href="{{route('admin.articles.create')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Добавление статей</p>
                                 </a>

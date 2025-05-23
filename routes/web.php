@@ -18,16 +18,16 @@ Route::group(['namespace' => 'App\Http\Controllers\About'], function () {
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Catalog'], function () {
-    Route::get('/catalogs', IndexController::class)->name('catalogs.index');// Вывод всех товаров
-    Route::post('/catalogs', StoreController::class)->name('catalogs.store'); // Само добавление товара
-    Route::get('/catalogs/{product}', ShowController::class)->name('catalogs.show'); // Вывод оперделенного товара
+    Route::get('/catalogs', IndexController::class)->name('catalogs.index');
+    Route::post('/catalogs', StoreController::class)->name('catalogs.store');
+    Route::get('/catalogs/{product}', ShowController::class)->name('catalogs.show');
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Basket', 'middleware' => 'user'], function () {
-    Route::get('/baskets', IndexController::class)->name('basket.index');// Вывод всех заказов
-    Route::post('/baskets', StoreController::class)->name('basket.store'); // Само добавление отзыва
-    Route::put('/baskets/{basket}', UpdateController::class)->name('basket.update'); // Само добавление отзыва
-    Route::delete('/baskets/{basket}', DestroyController::class)->name('basket.destroy'); // Само добавление отзыва
+    Route::get('/baskets', IndexController::class)->name('basket.index');
+    Route::post('/baskets', StoreController::class)->name('basket.store');
+    Route::put('/baskets/{basket}', UpdateController::class)->name('basket.update');
+    Route::delete('/baskets/{basket}', DestroyController::class)->name('basket.destroy');
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Contact'], function () {
@@ -52,20 +52,35 @@ Route::group(['namespace' => 'App\Http\Controllers\Cabinet', 'middleware' => 'us
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'admin'], function () {
-    Route::group(['namespace' => 'user'], function () {
-        Route::get('/admin/', IndexController::class)->name('admin.user.index'); // Вывод всех отзывов
-    });
     Route::group(['namespace' => 'statistics'], function () {
-        Route::get('/admin/statistics', IndexController::class)->name('admin.statistics.index'); // Вывод всех отзывов
+        Route::get('/admin/statistics', IndexController::class)->name('admin.statistics.index');
     });
     Route::group(['namespace' => 'product'], function () {
-        Route::get('/admin/products', IndexController::class)->name('admin.products.index'); // Вывод всех отзывов
-        Route::get('/admin/products/create', CreateController::class)->name('admin.products.create'); // Вывод всех отзывов
-        Route::post('/admin/products', StoreController::class)->name('admin.products.store'); // Вывод всех отзывов
-        Route::get('/admin/products/{product}/edit', EditController::class)->name('admin.products.edit'); // Вывод всех отзывов
-        Route::patch('/admin/products/{product}', UpdateController::class)->name('admin.products.update'); // Вывод всех отзывов
-        Route::delete('/admin/products/{product}', DestroyController::class)->name('admin.products.destroy'); // Вывод всех отзывов
+        Route::get('/admin/products', IndexController::class)->name('admin.products.index');
+        Route::get('/admin/products/create', CreateController::class)->name('admin.products.create');
+        Route::post('/admin/products', StoreController::class)->name('admin.products.store');
+        Route::get('/admin/products/{product}/edit', EditController::class)->name('admin.products.edit');
+        Route::patch('/admin/products/{product}', UpdateController::class)->name('admin.products.update');
+        Route::delete('/admin/products/{product}', DestroyController::class)->name('admin.products.destroy');
     });
+    Route::group(['namespace' => 'contact'], function () {
+        Route::get('/admin/', IndexController::class)->name('admin.contacts.index');
+        Route::get('/admin/contacts/{contact}/edit', EditController::class)->name('admin.contacts.edit');
+        Route::patch('/admin/contacts/{contact}', UpdateController::class)->name('admin.contacts.update');
+    });
+    Route::group(['namespace' => 'article'], function () {
+        Route::get('/admin/articles', IndexController::class)->name('admin.articles.index');
+        Route::get('/admin/articles/create', CreateController::class)->name('admin.articles.create');
+        Route::post('/admin/articles', StoreController::class)->name('admin.articles.store');
+        Route::get('/admin/articles/{article}/edit', EditController::class)->name('admin.articles.edit');
+        Route::patch('/admin/articles/{article}', UpdateController::class)->name('admin.articles.update');
+        Route::delete('/admin/articles/{article}', DestroyController::class)->name('admin.articles.destroy');
+    });
+    Route::group(['namespace' => 'reviews'], function () {
+        Route::get('/admin/reviews', IndexController::class)->name('admin.reviews.index');
+        Route::delete('/admin/reviews/{review}', DestroyController::class)->name('admin.reviews.destroy');
+    });
+
 });
 
 
@@ -75,14 +90,12 @@ Route::post('/subscribe', [SubscriptionController::class, 'subscribe'])->middlew
 Route::post('/unsubscribe', [SubscriptionController::class, 'unsubscribe'])->middleware('auth')->name('unsubscribe');
 
 
-
-
 Route::get('/test/{email}', function ($email, Request $request) {
     $text = $request->query('text', 'Привет! Это тестовое письмо по умолчанию.');
 
     Mail::raw($text, function ($message) use ($email) {
         $message->to($email)
-                ->subject('Тестовая отправка');
+            ->subject('Тестовая отправка');
     });
 
     return "Письмо отправлено на $email с текстом: $text";

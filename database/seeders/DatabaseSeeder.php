@@ -13,6 +13,7 @@ use App\Models\Promotion;
 use App\Models\Review;
 use App\Models\Subscription;
 use App\Models\Type;
+use App\Models\TypeArticle;
 use App\Models\User;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -25,6 +26,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        TypeArticle::insert([
+            ['id' => 1, 'type' => 'Все статьи', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 2, 'type' => 'Хранение', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 3, 'type' => 'Разогрев', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 4, 'type' => 'Заморозка', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 5, 'type' => 'Советы', 'created_at' => now(), 'updated_at' => now()],
+        ]);
         News::factory(50)->create();
         Article::factory(50)->create();
         Promotion::factory(50)->create();

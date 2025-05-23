@@ -12,4 +12,10 @@ class Article extends Model
     use Filterable;
     protected $table = 'articles';
     protected $guarded = [];
+
+    public function typeArticles()
+    {
+        return $this->belongsTo(TypeArticle::class, 'type_id', 'id');
+    }
+
 }

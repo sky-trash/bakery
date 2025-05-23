@@ -118,11 +118,11 @@
                     <!-- Бейдж, который вылезает поверх карточки -->
                     <span class="badge bg-success position-absolute"
                           style="top: 10px; right: 15px; z-index: 1; padding: 5px 10px; font-size: 0.75rem;">
-                        {{ $item->type }}
+                               {{$item->typeArticles->type}}
                     </span>
 
                     <div class="ratio ratio-16x9">
-                        <img src="{{ asset('storage/news/'.$item->image) }}"
+                        <img src="{{ asset('storage/article/'.$item->image) }}"
                              class="card-img-top object-fit-cover"
                              alt="{{ $item->title }}"
                              style="border-top-left-radius: .5rem; border-top-right-radius: .5rem;">

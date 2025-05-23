@@ -12,12 +12,21 @@
 
     <title>Document</title>
 </head>
-<body >
+<style>
+    .navbar-toggler {
+        border-color: white;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+</style>
+<body>
 <div class="container">
     <nav class="navbar navbar-expand-lg text-white background-green">
         <div class="container-fluid ">
             <a class="navbar-brand text-white fw-bold" href="{{route('home.index')}}">ХЛЕБКА</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,10 +45,10 @@
                         <a class="nav-link active text-white" aria-current="page" href="{{route('catalogs.index')}}">Каталог</a>
                     </li>
                     @auth()
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page"
-                           href="{{route('basket.index')}}">Корзина</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page"
+                               href="{{route('basket.index')}}">Корзина</a>
+                        </li>
                     @endauth
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="{{route('contact.index')}}">Контакты</a>
@@ -55,7 +64,8 @@
 
                     @can('view-admin', auth()->user())
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="{{route('admin.user.index')}}">Админ
+                            <a class="nav-link active text-white" aria-current="page"
+                               href="{{route('admin.user.index')}}">Админ
                                 панель</a>
                         </li>
                     @endcan
@@ -88,11 +98,12 @@
                 </ul>
             </div>
         </div>
-        
+
         @php $contact = \App\Models\Contact::first(); @endphp
 
         @if($contact && $contact->phone)
-            <a href="tel:{{ preg_replace('/\D+/', '', $contact->phone) }}" id="callBtn" class="btn btn-primary" style="margin:0 15px;">
+            <a href="tel:{{ preg_replace('/\D+/', '', $contact->phone) }}" id="callBtn" class="btn btn-primary"
+               style="margin:0 15px;">
                 Позвонить менеджеру
             </a>
 
@@ -118,7 +129,7 @@
 
     </nav>
     <div style="background: #e8edd5; height: auto;" class=" pb-5">
-        <div class="p-2" >
+        <div class="p-2">
             @yield('content')
         </div>
     </div>

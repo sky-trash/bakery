@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Type;
+use App\Models\TypeArticle;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -44,7 +46,7 @@ class ArticleFactory extends Factory
         return [
             'title' => $this->faker->sentence(5),
             'time' => $this->faker->randomElement($time),
-            'type' => $this->faker->randomElement($type),
+            'type_id' => TypeArticle::get()->random()->id,
             'description' => $this->faker->text,
             'image' => $this->faker->randomElement($images),
         ];
