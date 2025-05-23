@@ -102,7 +102,7 @@
             @endphp
                 <form action="{{ $isSubscribed ? route('unsubscribe') : route('subscribe') }}" method="POST">
                     @csrf
-                    <button type="submit" class="btn btn-{{ $isSubscribed ? 'danger' : 'primary' }}">
+                    <button type="submit" class="btn" style="color:white;background-color:{{ $isSubscribed ? '#dc3545' : '#313802' }};">
                         {{ $isSubscribed ? 'Отписаться от рассылки' : 'Подписаться на рассылку' }}
                     </button>
                 </form>

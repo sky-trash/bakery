@@ -187,7 +187,26 @@
 
         {{--        четвертый блок--}}
         <div class="mt-5 ">
-        <div style="display: flex; justify-content: center; align-items: center; position: relative;">
+            <style>
+                @media (max-width: 768px) {
+                    .promo {
+                        flex-direction: column !important;
+                        align-items: center !important;
+                    }
+                    .promo form {
+                        position: static !important;
+                        margin: 10px 0;
+                    }
+                    .btn-m{
+                        margin: 10px 0 !important;
+                    }
+                }
+                .btn-m{
+                    color:white;
+                    margin:0 18% 0 0;
+                }
+            </style>
+            <div class="promo" style="display: flex; justify-content: center; align-items: center; position: relative;">
                 <div style="text-align: center;">
                     <h2 class="fw-bold">АКЦИИ</h2>
                     <p style="max-width: 400px; margin: 0 auto;" class="fs-3 fw-normal">
@@ -201,7 +220,7 @@
                     @endphp
                     <form action="{{ $isSubscribed ? route('unsubscribe') : route('subscribe') }}" method="POST" style="position: absolute; right: 0;">
                         @csrf
-                        <button type="submit" class="btn btn-{{ $isSubscribed ? 'danger' : 'primary' }}">
+                        <button type="submit" class="btn {{ $isSubscribed ? 'btn-danger' : 'background-green' }} btn-m">
                             {{ $isSubscribed ? 'Отписаться от рассылки' : 'Подписаться на рассылку' }}
                         </button>
                     </form>

@@ -94,7 +94,30 @@
                             <a class="nav-link active text-white" aria-current="page" href="{{route('register')}}">Регистрация</a>
                         </li>
                     @endguest
-
+                        @php $contact = \App\Models\Contact::first(); @endphp
+                        @if($contact && $contact->phone)
+                            <li class="nav-item">
+                                <a href="tel:{{ preg_replace('/\D+/', '', $contact->phone) }}" id="callBtn" class="btn" style="margin:0 15px;background-color:#d4e09b;">
+                                    Позвонить менеджеру
+                                </a>
+                                <script>
+                                const btn = document.getElementById('callBtn');
+                                const phone = "{{ $contact->phone }}";
+                                btn.addEventListener('click', () => {
+                                    // Копируем номер в буфер независимо от устройства
+                                    navigator.clipboard.writeText(phone)
+                                        .then(() => {
+                                            // Можно показать уведомление, что номер скопирован
+                                            console.log('Номер скопирован в буфер:', phone);
+                                        })
+                                        .catch(() => {
+                                            console.log('Не удалось скопировать номер автоматически.');
+                                        });
+                                    // Звонок по ссылке tel: сработает автоматически благодаря href в <a>
+                                });
+                            </script>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>

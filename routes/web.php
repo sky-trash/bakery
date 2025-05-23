@@ -81,6 +81,20 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'admi
         Route::delete('/admin/reviews/{review}', DestroyController::class)->name('admin.reviews.destroy');
     });
 
+    Route::group(['namespace' => 'orders'], function () {
+        Route::get('/admin/orders', IndexController::class)->name('admin.orders.index');
+        Route::get('/admin/orders/{id}/edit', EditController::class)->name('admin.orders.edit');
+        Route::patch('/admin/orders/{id}', [\App\Http\Controllers\Admin\Orders\UpdateController::class, '__invoke'])->name('admin.orders.update');
+        Route::delete('/admin/orders/{id}', [\App\Http\Controllers\Admin\Orders\DestroyController::class, '__invoke'])->name('admin.orders.destroy');
+    });
+
+    Route::group(['namespace' => '\App\Http\Controllers\Admin\Promotions'], function () {
+        Route::get('/admin/promotions', \IndexController::class)->name('admin.promotions.index');
+        Route::get('/admin/promotions/create', CreateController::class)->name('admin.promotions.create');
+        Route::post('/admin/promotions', StoreController::class)->name('admin.promotions.store');
+        Route::patch('/admin/promotions/{id}', UpdateController::class)->name('admin.promotions.update');
+        Route::delete('/admin/promotions/{id}', DestroyController::class)->name('admin.promotions.destroy');
+    });
 });
 
 
@@ -100,3 +114,4 @@ Route::get('/test/{email}', function ($email, Request $request) {
 
     return "Письмо отправлено на $email с текстом: $text";
 });
+Route::post('/unsubscribe', [SubscriptionController::class, 'unsubscribe'])->middleware('auth')->name('unsubscribe');

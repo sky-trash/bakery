@@ -119,15 +119,9 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                <a href="{{route('admin.promotions.index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Вывод акций</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/mailbox/compose.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Добавление акций</p>
                                 </a>
                             </li>
                         </ul>
@@ -183,17 +177,23 @@
 
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
-                            <p>
+                            <i class="nav-icon fas fa-shopping-cart"></i>
+                            <p> 
                                 ЗАКАЗЫ
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                <a href="{{ route('admin.orders.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Вывод заказов</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.orders.edit', 1) }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Редактирование заказа (пример)</p>
                                 </a>
                             </li>
                         </ul>
