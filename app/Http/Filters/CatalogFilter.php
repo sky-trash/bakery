@@ -29,6 +29,8 @@ class CatalogFilter extends AbstractFilter
 
     public function type(Builder $builder, $value)
     {
-        $builder->where('type', $value);
+        $builder->whereHas('type', function ($q) use ($value) {
+            $q->where('type', $value);
+        });
     }
 }
