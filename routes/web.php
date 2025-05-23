@@ -73,17 +73,3 @@ use App\Http\Controllers\SubscriptionController;
 
 Route::post('/subscribe', [SubscriptionController::class, 'subscribe'])->middleware('auth')->name('subscribe');
 Route::post('/unsubscribe', [SubscriptionController::class, 'unsubscribe'])->middleware('auth')->name('unsubscribe');
-
-
-
-
-Route::get('/test/{email}', function ($email, Request $request) {
-    $text = $request->query('text', 'Привет! Это тестовое письмо по умолчанию.');
-
-    Mail::raw($text, function ($message) use ($email) {
-        $message->to($email)
-                ->subject('Тестовая отправка');
-    });
-
-    return "Письмо отправлено на $email с текстом: $text";
-});

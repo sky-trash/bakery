@@ -84,38 +84,33 @@
                             <a class="nav-link active text-white" aria-current="page" href="{{route('register')}}">Регистрация</a>
                         </li>
                     @endguest
-
+                        @php $contact = \App\Models\Contact::first(); @endphp
+                        @if($contact && $contact->phone)
+                            <li class="nav-item">
+                                <a href="tel:{{ preg_replace('/\D+/', '', $contact->phone) }}" id="callBtn" class="btn btn-primary" style="margin:0 15px;">
+                                    Позвонить менеджеру
+                                </a>
+                                <script>
+                                const btn = document.getElementById('callBtn');
+                                const phone = "{{ $contact->phone }}";
+                                btn.addEventListener('click', () => {
+                                    // Копируем номер в буфер независимо от устройства
+                                    navigator.clipboard.writeText(phone)
+                                        .then(() => {
+                                            // Можно показать уведомление, что номер скопирован
+                                            console.log('Номер скопирован в буфер:', phone);
+                                        })
+                                        .catch(() => {
+                                            console.log('Не удалось скопировать номер автоматически.');
+                                        });
+                                    // Звонок по ссылке tel: сработает автоматически благодаря href в <a>
+                                });
+                            </script>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>
-        
-        @php $contact = \App\Models\Contact::first(); @endphp
-
-        @if($contact && $contact->phone)
-            <a href="tel:{{ preg_replace('/\D+/', '', $contact->phone) }}" id="callBtn" class="btn btn-primary" style="margin:0 15px;">
-                Позвонить менеджеру
-            </a>
-
-            <script>
-                const btn = document.getElementById('callBtn');
-                const phone = "{{ $contact->phone }}";
-
-                btn.addEventListener('click', () => {
-                    // Копируем номер в буфер независимо от устройства
-                    navigator.clipboard.writeText(phone)
-                        .then(() => {
-                            // Можно показать уведомление, что номер скопирован
-                            console.log('Номер скопирован в буфер:', phone);
-                        })
-                        .catch(() => {
-                            console.log('Не удалось скопировать номер автоматически.');
-                        });
-                    // Звонок по ссылке tel: сработает автоматически благодаря href в <a>
-                });
-            </script>
-        @endif
-
-
     </nav>
     <div style="background: #e8edd5; height: auto;" class=" pb-5">
         <div class="p-2" >
