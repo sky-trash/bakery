@@ -6,7 +6,7 @@
 
     <form action="{{ route('admin.promotions.update', $promotion->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
-        @method('PUT')
+        @method('PATCH')
 
         <div class="mb-3">
             <label for="title" class="form-label">Название</label>
@@ -20,14 +20,14 @@
 
         <div class="mb-3">
             <label for="date" class="form-label">Дата</label>
-            <input type="date" class="form-control" id="date" name="date" value="{{ old('date', $promotion->date ? $promotion->date->format('Y-m-d') : '') }}">
+            <input type="date" class="form-control" id="date" name="date" value="{{ old('date', \Carbon\Carbon::parse($promotion->date)->format('Y-m-d')) }}">
         </div>
 
         <div class="mb-3">
             <label for="image" class="form-label">Изображение</label>
             @if($promotion->image)
                 <div>
-                    <img src="{{ asset('storage/' . $promotion->image) }}" alt="image" style="max-width: 200px; margin-bottom: 10px;">
+                    <img class="mb-3" src="{{ asset('storage/promotions/' . $promotion->image) }}" alt="image" style="max-width: 200px; margin-bottom: 10px;">
                 </div>
             @endif
             <input type="file" class="form-control" id="image" name="image" accept="image/*">

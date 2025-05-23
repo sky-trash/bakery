@@ -48,7 +48,7 @@ use Carbon\Carbon;
                 <td>{{ $promotion->date ? Carbon::parse($promotion->date)->format('d.m.Y') : '-' }}</td>
                 <td>
                     @if($promotion->image)
-                        <img src="{{ asset('storage/' . $promotion->image) }}" alt="image" style="max-width: 100px; height:auto;">
+                        <img src="{{ asset('storage/promotions/'. $promotion->image) }}" alt="image" style="max-width: 100px; height:auto;">
                     @else
                         Нет изображения
                     @endif
@@ -56,7 +56,7 @@ use Carbon\Carbon;
                 <td>{{ Carbon::parse($promotion->created_at)->format('d.m.Y H:i') }}</td>
                 <td>{{ Carbon::parse($promotion->updated_at)->format('d.m.Y H:i') }}</td>
                 <td>
-                    <a href="{{ route('admin.promotions.update', $promotion->id) }}" class="btn btn-success mb-1">Изменить</a>
+                    <a href="{{ route('admin.promotions.edit', $promotion->id) }}" class="btn btn-success mb-1">Изменить</a>
                     <form action="{{ route('admin.promotions.destroy', $promotion->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Удалить акцию #{{ $promotion->id }}?')">
                         @csrf
                         @method('DELETE')

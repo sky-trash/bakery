@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class StoreController extends Controller
 {
@@ -18,16 +19,19 @@ class StoreController extends Controller
             'image' => 'nullable|image|max:2048',
         ]);
 
-        $path = null;
+        $uniqueName = null;
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('promotions', 'public');
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $uniqueName = Str::uuid() . '.' . $extension;
+
+            $request->file('image')->storeAs('promotions', $uniqueName, 'public');
         }
 
         DB::table('promotions')->insert([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'date' => $request->input('date'),
-            'image' => $path,
+            'image' => $uniqueName,
             'created_at' => now(),
             'updated_at' => now(),
         ]);

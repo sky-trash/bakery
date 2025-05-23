@@ -89,9 +89,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'admi
     });
 
     Route::group(['namespace' => '\App\Http\Controllers\Admin\Promotions'], function () {
-        Route::get('/admin/promotions', \IndexController::class)->name('admin.promotions.index');
+        Route::get('/admin/promotions', IndexController::class)->name('admin.promotions.index');
         Route::get('/admin/promotions/create', CreateController::class)->name('admin.promotions.create');
         Route::post('/admin/promotions', StoreController::class)->name('admin.promotions.store');
+        Route::get('/admin/promotions/{promotion}/edit', EditController::class)->name('admin.promotions.edit');
         Route::patch('/admin/promotions/{id}', UpdateController::class)->name('admin.promotions.update');
         Route::delete('/admin/promotions/{id}', DestroyController::class)->name('admin.promotions.destroy');
     });

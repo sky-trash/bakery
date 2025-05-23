@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class UpdateController extends Controller
 {
@@ -14,7 +15,7 @@ class UpdateController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'date' => 'nullable|date',  // Сделал nullable, если дата не обязательна
+            'date' => 'nullable|date',
             'image' => 'nullable|image|max:2048',
         ]);
 
@@ -24,7 +25,7 @@ class UpdateController extends Controller
             abort(404);
         }
 
-        $path = $promotion->image;
+        $uniqueName = $promotion->image;
 
         if ($request->hasFile('image')) {
             // Удаляем старое изображение, если есть
@@ -32,14 +33,17 @@ class UpdateController extends Controller
                 Storage::disk('public')->delete($promotion->image);
             }
 
-            $path = $request->file('image')->store('promotions', 'public');
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $uniqueName = Str::uuid() . '.' . $extension;
+
+            $request->file('image')->storeAs('promotions', $uniqueName, 'public');
         }
 
         DB::table('promotions')->where('id', $id)->update([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'date' => $request->input('date'),
-            'image' => $path,
+            'image' => $uniqueName,
             'updated_at' => now(),
         ]);
 
