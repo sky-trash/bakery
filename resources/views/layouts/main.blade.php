@@ -87,7 +87,7 @@
                         @php $contact = \App\Models\Contact::first(); @endphp
                         @if($contact && $contact->phone)
                             <li class="nav-item">
-                                <a href="tel:{{ preg_replace('/\D+/', '', $contact->phone) }}" id="callBtn" class="btn btn-primary" style="margin:0 15px;">
+                                <a href="tel:{{ preg_replace('/\D+/', '', $contact->phone) }}" id="callBtn" class="btn" style="margin:0 15px;background-color:#d4e09b;">
                                     Позвонить менеджеру
                                 </a>
                                 <script>
