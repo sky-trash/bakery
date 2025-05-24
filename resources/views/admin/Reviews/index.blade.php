@@ -44,7 +44,8 @@
                         <th scope="row">{{$item->date}}</th>
 
                         <th scope="row">
-                            <form action="{{route('admin.reviews.destroy', $item->id)}}" method="post">
+                            <form action="{{route('admin.reviews.destroy', $item->id)}}" method="post"
+                                  style="display:inline;" onsubmit="return confirm('Удалить отзыв #{{ $item->id }}?')">
                                 @csrf
                                 @method('delete')
                                 <button class="btn btn-danger mt-1" type="submit">Удалить</button>

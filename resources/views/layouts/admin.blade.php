@@ -124,6 +124,12 @@
                                     <p>Вывод акций</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.promotions.create') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Добавление акций</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
@@ -178,7 +184,7 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-shopping-cart"></i>
-                            <p> 
+                            <p>
                                 ЗАКАЗЫ
                                 <i class="fas fa-angle-left right"></i>
                             </p>

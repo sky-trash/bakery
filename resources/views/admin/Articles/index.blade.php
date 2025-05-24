@@ -43,7 +43,8 @@
                     <th scope="row">{{$item->typeArticles->type}}</th>
                     <th scope="row">
                         <a href="{{route('admin.articles.edit', $item->id )}}"> <button class="btn btn-success" type="submit">Изменить</button></a>
-                        <form action="{{route('admin.articles.destroy', $item->id)}}" method="post">
+                        <form action="{{route('admin.articles.destroy', $item->id)}}" method="post" style="display:inline;"
+                              onsubmit="return confirm('Удалить статью #{{ $item->id }}?')">
                             @csrf
                             @method('delete')
                         <button class="btn btn-danger mt-1" type="submit">Удалить</button>
